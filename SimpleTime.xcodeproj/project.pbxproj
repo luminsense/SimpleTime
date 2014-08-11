@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20A23A4A199924F700E4C577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A49199924F700E4C577 /* Foundation.framework */; };
+		20A23A4C199924F700E4C577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4B199924F700E4C577 /* CoreGraphics.framework */; };
+		20A23A4E199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
+		20A23A54199924F700E4C577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20A23A52199924F700E4C577 /* InfoPlist.strings */; };
+		20A23A56199924F700E4C577 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A23A55199924F700E4C577 /* main.m */; };
+		20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A23A59199924F700E4C577 /* SPTAppDelegate.m */; };
+		20A23A5C199924F700E4C577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A23A5B199924F700E4C577 /* Images.xcassets */; };
+		20A23A63199924F700E4C577 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A62199924F700E4C577 /* XCTest.framework */; };
+		20A23A64199924F700E4C577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A49199924F700E4C577 /* Foundation.framework */; };
+		20A23A65199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
+		20A23A6D199924F700E4C577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20A23A6B199924F700E4C577 /* InfoPlist.strings */; };
+		20A23A6F199924F700E4C577 /* SimpleTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A23A6E199924F700E4C577 /* SimpleTimeTests.m */; };
+		20BF39F019992557004E1720 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BF39EF19992557004E1720 /* Storyboard.storyboard */; };
+		20E3C2C9199927520060AF41 /* SPTCurrentIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2C8199927520060AF41 /* SPTCurrentIssueViewController.m */; };
+		20E3C2CF199927CF0060AF41 /* SPTDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2CE199927CF0060AF41 /* SPTDayViewController.m */; };
+		20E3C2D2199927E30060AF41 /* SPTRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2D1199927E30060AF41 /* SPTRecordTableViewController.m */; };
+		20E3C2D5199928210060AF41 /* SPTIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2D4199928210060AF41 /* SPTIssue.m */; };
+		20E3C2D91999284F0060AF41 /* SPTDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2D81999284F0060AF41 /* SPTDay.m */; };
+		20E3C2DC199928840060AF41 /* SPTIssuesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2DB199928840060AF41 /* SPTIssuesStore.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20A23A66199924F700E4C577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20A23A3E199924F700E4C577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20A23A45199924F700E4C577;
+			remoteInfo = SimpleTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20A23A46199924F700E4C577 /* SimpleTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A23A49199924F700E4C577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		20A23A4B199924F700E4C577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		20A23A4D199924F700E4C577 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		20A23A51199924F700E4C577 /* SimpleTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTime-Info.plist"; sourceTree = "<group>"; };
+		20A23A53199924F700E4C577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20A23A55199924F700E4C577 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20A23A57199924F700E4C577 /* SimpleTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleTime-Prefix.pch"; sourceTree = "<group>"; };
+		20A23A58199924F700E4C577 /* SPTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTAppDelegate.h; sourceTree = "<group>"; };
+		20A23A59199924F700E4C577 /* SPTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTAppDelegate.m; sourceTree = "<group>"; };
+		20A23A5B199924F700E4C577 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		20A23A61199924F700E4C577 /* SimpleTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A23A62199924F700E4C577 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		20A23A6A199924F700E4C577 /* SimpleTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTimeTests-Info.plist"; sourceTree = "<group>"; };
+		20A23A6C199924F700E4C577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20A23A6E199924F700E4C577 /* SimpleTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTimeTests.m; sourceTree = "<group>"; };
+		20BF39EF19992557004E1720 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = SimpleTime/Storyboard.storyboard; sourceTree = "<group>"; };
+		20E3C2C7199927520060AF41 /* SPTCurrentIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTCurrentIssueViewController.h; path = SimpleTime/SPTCurrentIssueViewController.h; sourceTree = "<group>"; };
+		20E3C2C8199927520060AF41 /* SPTCurrentIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTCurrentIssueViewController.m; path = SimpleTime/SPTCurrentIssueViewController.m; sourceTree = "<group>"; };
+		20E3C2CD199927CF0060AF41 /* SPTDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTDayViewController.h; path = SimpleTime/SPTDayViewController.h; sourceTree = "<group>"; };
+		20E3C2CE199927CF0060AF41 /* SPTDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTDayViewController.m; path = SimpleTime/SPTDayViewController.m; sourceTree = "<group>"; };
+		20E3C2D0199927E30060AF41 /* SPTRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTRecordTableViewController.h; path = SimpleTime/SPTRecordTableViewController.h; sourceTree = "<group>"; };
+		20E3C2D1199927E30060AF41 /* SPTRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTRecordTableViewController.m; path = SimpleTime/SPTRecordTableViewController.m; sourceTree = "<group>"; };
+		20E3C2D3199928210060AF41 /* SPTIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTIssue.h; path = SimpleTime/SPTIssue.h; sourceTree = "<group>"; };
+		20E3C2D4199928210060AF41 /* SPTIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTIssue.m; path = SimpleTime/SPTIssue.m; sourceTree = "<group>"; };
+		20E3C2D71999284F0060AF41 /* SPTDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTDay.h; path = SimpleTime/SPTDay.h; sourceTree = "<group>"; };
+		20E3C2D81999284F0060AF41 /* SPTDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTDay.m; path = SimpleTime/SPTDay.m; sourceTree = "<group>"; };
+		20E3C2DA199928840060AF41 /* SPTIssuesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTIssuesStore.h; sourceTree = "<group>"; };
+		20E3C2DB199928840060AF41 /* SPTIssuesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTIssuesStore.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20A23A43199924F700E4C577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A23A4C199924F700E4C577 /* CoreGraphics.framework in Frameworks */,
+				20A23A4E199924F700E4C577 /* UIKit.framework in Frameworks */,
+				20A23A4A199924F700E4C577 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A23A5E199924F700E4C577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A23A63199924F700E4C577 /* XCTest.framework in Frameworks */,
+				20A23A65199924F700E4C577 /* UIKit.framework in Frameworks */,
+				20A23A64199924F700E4C577 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20A23A3D199924F700E4C577 = {
+			isa = PBXGroup;
+			children = (
+				20E3C2D6199928250060AF41 /* Model */,
+				20E3C2C6199926CF0060AF41 /* Controllers */,
+				20A23A4F199924F700E4C577 /* SimpleTime */,
+				20A23A68199924F700E4C577 /* SimpleTimeTests */,
+				20A23A48199924F700E4C577 /* Frameworks */,
+				20A23A47199924F700E4C577 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20A23A47199924F700E4C577 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20A23A46199924F700E4C577 /* SimpleTime.app */,
+				20A23A61199924F700E4C577 /* SimpleTimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20A23A48199924F700E4C577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20A23A49199924F700E4C577 /* Foundation.framework */,
+				20A23A4B199924F700E4C577 /* CoreGraphics.framework */,
+				20A23A4D199924F700E4C577 /* UIKit.framework */,
+				20A23A62199924F700E4C577 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20A23A4F199924F700E4C577 /* SimpleTime */ = {
+			isa = PBXGroup;
+			children = (
+				20A23A58199924F700E4C577 /* SPTAppDelegate.h */,
+				20A23A59199924F700E4C577 /* SPTAppDelegate.m */,
+				20A23A5B199924F700E4C577 /* Images.xcassets */,
+				20A23A50199924F700E4C577 /* Supporting Files */,
+			);
+			path = SimpleTime;
+			sourceTree = "<group>";
+		};
+		20A23A50199924F700E4C577 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20A23A51199924F700E4C577 /* SimpleTime-Info.plist */,
+				20A23A52199924F700E4C577 /* InfoPlist.strings */,
+				20A23A55199924F700E4C577 /* main.m */,
+				20A23A57199924F700E4C577 /* SimpleTime-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20A23A68199924F700E4C577 /* SimpleTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				20A23A6E199924F700E4C577 /* SimpleTimeTests.m */,
+				20A23A69199924F700E4C577 /* Supporting Files */,
+			);
+			path = SimpleTimeTests;
+			sourceTree = "<group>";
+		};
+		20A23A69199924F700E4C577 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20A23A6A199924F700E4C577 /* SimpleTimeTests-Info.plist */,
+				20A23A6B199924F700E4C577 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20E3C2C6199926CF0060AF41 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20BF39EF19992557004E1720 /* Storyboard.storyboard */,
+				20E3C2C7199927520060AF41 /* SPTCurrentIssueViewController.h */,
+				20E3C2C8199927520060AF41 /* SPTCurrentIssueViewController.m */,
+				20E3C2D0199927E30060AF41 /* SPTRecordTableViewController.h */,
+				20E3C2D1199927E30060AF41 /* SPTRecordTableViewController.m */,
+				20E3C2CD199927CF0060AF41 /* SPTDayViewController.h */,
+				20E3C2CE199927CF0060AF41 /* SPTDayViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		20E3C2D6199928250060AF41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20E3C2D3199928210060AF41 /* SPTIssue.h */,
+				20E3C2D4199928210060AF41 /* SPTIssue.m */,
+				20E3C2D71999284F0060AF41 /* SPTDay.h */,
+				20E3C2D81999284F0060AF41 /* SPTDay.m */,
+				20E3C2DA199928840060AF41 /* SPTIssuesStore.h */,
+				20E3C2DB199928840060AF41 /* SPTIssuesStore.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20A23A45199924F700E4C577 /* SimpleTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTime" */;
+			buildPhases = (
+				20A23A42199924F700E4C577 /* Sources */,
+				20A23A43199924F700E4C577 /* Frameworks */,
+				20A23A44199924F700E4C577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleTime;
+			productName = SimpleTime;
+			productReference = 20A23A46199924F700E4C577 /* SimpleTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20A23A60199924F700E4C577 /* SimpleTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A23A75199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTimeTests" */;
+			buildPhases = (
+				20A23A5D199924F700E4C577 /* Sources */,
+				20A23A5E199924F700E4C577 /* Frameworks */,
+				20A23A5F199924F700E4C577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20A23A67199924F700E4C577 /* PBXTargetDependency */,
+			);
+			name = SimpleTimeTests;
+			productName = SimpleTimeTests;
+			productReference = 20A23A61199924F700E4C577 /* SimpleTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20A23A3E199924F700E4C577 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SPT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = LumiNg;
+				TargetAttributes = {
+					20A23A60199924F700E4C577 = {
+						TestTargetID = 20A23A45199924F700E4C577;
+					};
+				};
+			};
+			buildConfigurationList = 20A23A41199924F700E4C577 /* Build configuration list for PBXProject "SimpleTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 20A23A3D199924F700E4C577;
+			productRefGroup = 20A23A47199924F700E4C577 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20A23A45199924F700E4C577 /* SimpleTime */,
+				20A23A60199924F700E4C577 /* SimpleTimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20A23A44199924F700E4C577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A23A54199924F700E4C577 /* InfoPlist.strings in Resources */,
+				20A23A5C199924F700E4C577 /* Images.xcassets in Resources */,
+				20BF39F019992557004E1720 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A23A5F199924F700E4C577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A23A6D199924F700E4C577 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20A23A42199924F700E4C577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E3C2D2199927E30060AF41 /* SPTRecordTableViewController.m in Sources */,
+				20E3C2CF199927CF0060AF41 /* SPTDayViewController.m in Sources */,
+				20E3C2C9199927520060AF41 /* SPTCurrentIssueViewController.m in Sources */,
+				20E3C2DC199928840060AF41 /* SPTIssuesStore.m in Sources */,
+				20E3C2D91999284F0060AF41 /* SPTDay.m in Sources */,
+				20E3C2D5199928210060AF41 /* SPTIssue.m in Sources */,
+				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
+				20A23A56199924F700E4C577 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A23A5D199924F700E4C577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A23A6F199924F700E4C577 /* SimpleTimeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20A23A67199924F700E4C577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20A23A45199924F700E4C577 /* SimpleTime */;
+			targetProxy = 20A23A66199924F700E4C577 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20A23A52199924F700E4C577 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20A23A53199924F700E4C577 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		20A23A6B199924F700E4C577 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20A23A6C199924F700E4C577 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20A23A70199924F700E4C577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		20A23A71199924F700E4C577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20A23A73199924F700E4C577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		20A23A74199924F700E4C577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		20A23A76199924F700E4C577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpleTime.app/SimpleTime";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SimpleTimeTests/SimpleTimeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		20A23A77199924F700E4C577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpleTime.app/SimpleTime";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTimeTests/SimpleTimeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20A23A41199924F700E4C577 /* Build configuration list for PBXProject "SimpleTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A23A70199924F700E4C577 /* Debug */,
+				20A23A71199924F700E4C577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A23A73199924F700E4C577 /* Debug */,
+				20A23A74199924F700E4C577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20A23A75199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A23A76199924F700E4C577 /* Debug */,
+				20A23A77199924F700E4C577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20A23A3E199924F700E4C577 /* Project object */;
+}
