@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */; };
+		206FA683199A5E03003E25B3 /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FA682199A5E03003E25B3 /* SPTEvent.m */; };
+		206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FA685199A8096003E25B3 /* SPTEventStore.m */; };
 		20A23A4A199924F700E4C577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A49199924F700E4C577 /* Foundation.framework */; };
 		20A23A4C199924F700E4C577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4B199924F700E4C577 /* CoreGraphics.framework */; };
 		20A23A4E199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
@@ -19,13 +22,6 @@
 		20A23A65199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
 		20A23A6D199924F700E4C577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20A23A6B199924F700E4C577 /* InfoPlist.strings */; };
 		20A23A6F199924F700E4C577 /* SimpleTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A23A6E199924F700E4C577 /* SimpleTimeTests.m */; };
-		20BF39F019992557004E1720 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BF39EF19992557004E1720 /* Storyboard.storyboard */; };
-		20E3C2C9199927520060AF41 /* SPTCurrentIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2C8199927520060AF41 /* SPTCurrentIssueViewController.m */; };
-		20E3C2CF199927CF0060AF41 /* SPTDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2CE199927CF0060AF41 /* SPTDayViewController.m */; };
-		20E3C2D2199927E30060AF41 /* SPTRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2D1199927E30060AF41 /* SPTRecordTableViewController.m */; };
-		20E3C2D5199928210060AF41 /* SPTIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2D4199928210060AF41 /* SPTIssue.m */; };
-		20E3C2D91999284F0060AF41 /* SPTDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2D81999284F0060AF41 /* SPTDay.m */; };
-		20E3C2DC199928840060AF41 /* SPTIssuesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E3C2DB199928840060AF41 /* SPTIssuesStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		206FA67F199A59E1003E25B3 /* SimpleTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTime.xcdatamodel; sourceTree = "<group>"; };
+		206FA681199A5E03003E25B3 /* SPTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEvent.h; path = SimpleTime/SPTEvent.h; sourceTree = "<group>"; };
+		206FA682199A5E03003E25B3 /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
+		206FA684199A8096003E25B3 /* SPTEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventStore.h; path = SimpleTime/SPTEventStore.h; sourceTree = "<group>"; };
+		206FA685199A8096003E25B3 /* SPTEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventStore.m; path = SimpleTime/SPTEventStore.m; sourceTree = "<group>"; };
 		20A23A46199924F700E4C577 /* SimpleTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A23A49199924F700E4C577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20A23A4B199924F700E4C577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,19 +56,6 @@
 		20A23A6A199924F700E4C577 /* SimpleTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTimeTests-Info.plist"; sourceTree = "<group>"; };
 		20A23A6C199924F700E4C577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20A23A6E199924F700E4C577 /* SimpleTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTimeTests.m; sourceTree = "<group>"; };
-		20BF39EF19992557004E1720 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = SimpleTime/Storyboard.storyboard; sourceTree = "<group>"; };
-		20E3C2C7199927520060AF41 /* SPTCurrentIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTCurrentIssueViewController.h; path = SimpleTime/SPTCurrentIssueViewController.h; sourceTree = "<group>"; };
-		20E3C2C8199927520060AF41 /* SPTCurrentIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTCurrentIssueViewController.m; path = SimpleTime/SPTCurrentIssueViewController.m; sourceTree = "<group>"; };
-		20E3C2CD199927CF0060AF41 /* SPTDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTDayViewController.h; path = SimpleTime/SPTDayViewController.h; sourceTree = "<group>"; };
-		20E3C2CE199927CF0060AF41 /* SPTDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTDayViewController.m; path = SimpleTime/SPTDayViewController.m; sourceTree = "<group>"; };
-		20E3C2D0199927E30060AF41 /* SPTRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTRecordTableViewController.h; path = SimpleTime/SPTRecordTableViewController.h; sourceTree = "<group>"; };
-		20E3C2D1199927E30060AF41 /* SPTRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTRecordTableViewController.m; path = SimpleTime/SPTRecordTableViewController.m; sourceTree = "<group>"; };
-		20E3C2D3199928210060AF41 /* SPTIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTIssue.h; path = SimpleTime/SPTIssue.h; sourceTree = "<group>"; };
-		20E3C2D4199928210060AF41 /* SPTIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTIssue.m; path = SimpleTime/SPTIssue.m; sourceTree = "<group>"; };
-		20E3C2D71999284F0060AF41 /* SPTDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTDay.h; path = SimpleTime/SPTDay.h; sourceTree = "<group>"; };
-		20E3C2D81999284F0060AF41 /* SPTDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTDay.m; path = SimpleTime/SPTDay.m; sourceTree = "<group>"; };
-		20E3C2DA199928840060AF41 /* SPTIssuesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTIssuesStore.h; sourceTree = "<group>"; };
-		20E3C2DB199928840060AF41 /* SPTIssuesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTIssuesStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				20E3C2D6199928250060AF41 /* Model */,
-				20E3C2C6199926CF0060AF41 /* Controllers */,
+				20E3C2C6199926CF0060AF41 /* Controllers for Data Testing */,
 				20A23A4F199924F700E4C577 /* SimpleTime */,
 				20A23A68199924F700E4C577 /* SimpleTimeTests */,
 				20A23A48199924F700E4C577 /* Frameworks */,
@@ -166,29 +154,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		20E3C2C6199926CF0060AF41 /* Controllers */ = {
+		20E3C2C6199926CF0060AF41 /* Controllers for Data Testing */ = {
 			isa = PBXGroup;
 			children = (
-				20BF39EF19992557004E1720 /* Storyboard.storyboard */,
-				20E3C2C7199927520060AF41 /* SPTCurrentIssueViewController.h */,
-				20E3C2C8199927520060AF41 /* SPTCurrentIssueViewController.m */,
-				20E3C2D0199927E30060AF41 /* SPTRecordTableViewController.h */,
-				20E3C2D1199927E30060AF41 /* SPTRecordTableViewController.m */,
-				20E3C2CD199927CF0060AF41 /* SPTDayViewController.h */,
-				20E3C2CE199927CF0060AF41 /* SPTDayViewController.m */,
 			);
-			name = Controllers;
+			name = "Controllers for Data Testing";
 			sourceTree = "<group>";
 		};
 		20E3C2D6199928250060AF41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20E3C2D3199928210060AF41 /* SPTIssue.h */,
-				20E3C2D4199928210060AF41 /* SPTIssue.m */,
-				20E3C2D71999284F0060AF41 /* SPTDay.h */,
-				20E3C2D81999284F0060AF41 /* SPTDay.m */,
-				20E3C2DA199928840060AF41 /* SPTIssuesStore.h */,
-				20E3C2DB199928840060AF41 /* SPTIssuesStore.m */,
+				206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */,
+				206FA681199A5E03003E25B3 /* SPTEvent.h */,
+				206FA682199A5E03003E25B3 /* SPTEvent.m */,
+				206FA684199A8096003E25B3 /* SPTEventStore.h */,
+				206FA685199A8096003E25B3 /* SPTEventStore.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -271,7 +251,6 @@
 			files = (
 				20A23A54199924F700E4C577 /* InfoPlist.strings in Resources */,
 				20A23A5C199924F700E4C577 /* Images.xcassets in Resources */,
-				20BF39F019992557004E1720 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20E3C2D2199927E30060AF41 /* SPTRecordTableViewController.m in Sources */,
-				20E3C2CF199927CF0060AF41 /* SPTDayViewController.m in Sources */,
-				20E3C2C9199927520060AF41 /* SPTCurrentIssueViewController.m in Sources */,
-				20E3C2DC199928840060AF41 /* SPTIssuesStore.m in Sources */,
-				20E3C2D91999284F0060AF41 /* SPTDay.m in Sources */,
-				20E3C2D5199928210060AF41 /* SPTIssue.m in Sources */,
+				206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */,
+				206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */,
+				206FA683199A5E03003E25B3 /* SPTEvent.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
 				20A23A56199924F700E4C577 /* main.m in Sources */,
 			);
@@ -506,6 +482,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				206FA67F199A59E1003E25B3 /* SimpleTime.xcdatamodel */,
+			);
+			currentVersion = 206FA67F199A59E1003E25B3 /* SimpleTime.xcdatamodel */;
+			name = SimpleTime.xcdatamodeld;
+			path = SimpleTime/SimpleTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 20A23A3E199924F700E4C577 /* Project object */;
 }
