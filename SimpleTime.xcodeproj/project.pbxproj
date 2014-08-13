@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D2A199B93D8002633CC /* TESTMainViewController.m */; };
+		20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D2D199B93F1002633CC /* TESTAllEventsTableViewController.m */; };
+		20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D30199B940B002633CC /* TESTNewEventViewController.m */; };
+		20557D33199B9432002633CC /* DataTesting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20557D32199B9432002633CC /* DataTesting.storyboard */; };
 		206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */; };
-		206FA683199A5E03003E25B3 /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FA682199A5E03003E25B3 /* SPTEvent.m */; };
 		206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FA685199A8096003E25B3 /* SPTEventStore.m */; };
 		20A23A4A199924F700E4C577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A49199924F700E4C577 /* Foundation.framework */; };
 		20A23A4C199924F700E4C577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4B199924F700E4C577 /* CoreGraphics.framework */; };
@@ -22,6 +25,7 @@
 		20A23A65199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
 		20A23A6D199924F700E4C577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20A23A6B199924F700E4C577 /* InfoPlist.strings */; };
 		20A23A6F199924F700E4C577 /* SimpleTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A23A6E199924F700E4C577 /* SimpleTimeTests.m */; };
+		20E4A5D0199B74A400322A4A /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E4A5CF199B74A400322A4A /* SPTEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20557D29199B93D8002633CC /* TESTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTMainViewController.h; path = DataTesting/TESTMainViewController.h; sourceTree = "<group>"; };
+		20557D2A199B93D8002633CC /* TESTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTMainViewController.m; path = DataTesting/TESTMainViewController.m; sourceTree = "<group>"; };
+		20557D2C199B93F0002633CC /* TESTAllEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTAllEventsTableViewController.h; path = DataTesting/TESTAllEventsTableViewController.h; sourceTree = "<group>"; };
+		20557D2D199B93F1002633CC /* TESTAllEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTAllEventsTableViewController.m; path = DataTesting/TESTAllEventsTableViewController.m; sourceTree = "<group>"; };
+		20557D2F199B940B002633CC /* TESTNewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTNewEventViewController.h; path = DataTesting/TESTNewEventViewController.h; sourceTree = "<group>"; };
+		20557D30199B940B002633CC /* TESTNewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTNewEventViewController.m; path = DataTesting/TESTNewEventViewController.m; sourceTree = "<group>"; };
+		20557D32199B9432002633CC /* DataTesting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DataTesting.storyboard; path = DataTesting/DataTesting.storyboard; sourceTree = "<group>"; };
 		206FA67F199A59E1003E25B3 /* SimpleTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTime.xcdatamodel; sourceTree = "<group>"; };
-		206FA681199A5E03003E25B3 /* SPTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEvent.h; path = SimpleTime/SPTEvent.h; sourceTree = "<group>"; };
-		206FA682199A5E03003E25B3 /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
 		206FA684199A8096003E25B3 /* SPTEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventStore.h; path = SimpleTime/SPTEventStore.h; sourceTree = "<group>"; };
 		206FA685199A8096003E25B3 /* SPTEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventStore.m; path = SimpleTime/SPTEventStore.m; sourceTree = "<group>"; };
 		20A23A46199924F700E4C577 /* SimpleTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +65,8 @@
 		20A23A6A199924F700E4C577 /* SimpleTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTimeTests-Info.plist"; sourceTree = "<group>"; };
 		20A23A6C199924F700E4C577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20A23A6E199924F700E4C577 /* SimpleTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTimeTests.m; sourceTree = "<group>"; };
+		20E4A5CE199B74A400322A4A /* SPTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEvent.h; path = SimpleTime/SPTEvent.h; sourceTree = "<group>"; };
+		20E4A5CF199B74A400322A4A /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +168,13 @@
 		20E3C2C6199926CF0060AF41 /* Controllers for Data Testing */ = {
 			isa = PBXGroup;
 			children = (
+				20557D32199B9432002633CC /* DataTesting.storyboard */,
+				20557D29199B93D8002633CC /* TESTMainViewController.h */,
+				20557D2A199B93D8002633CC /* TESTMainViewController.m */,
+				20557D2F199B940B002633CC /* TESTNewEventViewController.h */,
+				20557D30199B940B002633CC /* TESTNewEventViewController.m */,
+				20557D2C199B93F0002633CC /* TESTAllEventsTableViewController.h */,
+				20557D2D199B93F1002633CC /* TESTAllEventsTableViewController.m */,
 			);
 			name = "Controllers for Data Testing";
 			sourceTree = "<group>";
@@ -165,8 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */,
-				206FA681199A5E03003E25B3 /* SPTEvent.h */,
-				206FA682199A5E03003E25B3 /* SPTEvent.m */,
+				20E4A5CE199B74A400322A4A /* SPTEvent.h */,
+				20E4A5CF199B74A400322A4A /* SPTEvent.m */,
 				206FA684199A8096003E25B3 /* SPTEventStore.h */,
 				206FA685199A8096003E25B3 /* SPTEventStore.m */,
 			);
@@ -250,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A23A54199924F700E4C577 /* InfoPlist.strings in Resources */,
+				20557D33199B9432002633CC /* DataTesting.storyboard in Resources */,
 				20A23A5C199924F700E4C577 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,8 +290,11 @@
 			files = (
 				206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */,
 				206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */,
-				206FA683199A5E03003E25B3 /* SPTEvent.m in Sources */,
+				20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */,
+				20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
+				20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */,
+				20E4A5D0199B74A400322A4A /* SPTEvent.m in Sources */,
 				20A23A56199924F700E4C577 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +415,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
 				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +429,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
 				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -31,6 +31,7 @@
                       eventType:(SPTEventType)type;
 
 - (NSArray *)getEventsForDate:(NSDate *)date;
+- (NSArray *)getAllEvents;
 - (BOOL)saveChanges;
 
 @end

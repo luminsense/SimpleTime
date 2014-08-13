@@ -2,7 +2,7 @@
 //  SPTEvent.m
 //  SimpleTime
 //
-//  Created by Lumi on 14-8-12.
+//  Created by Lumi on 14-8-13.
 //  Copyright (c) 2014年 LumiNg. All rights reserved.
 //
 
@@ -11,15 +11,25 @@
 
 @implementation SPTEvent
 
-@dynamic title;
 @dynamic beginDate;
 @dynamic endDate;
-@dynamic isFinished;
 @dynamic eventType;
+@dynamic isFinished;
+@dynamic title;
 
 + (NSString *)entityName
 {
     return @"SPTEvent";
+}
+
+- (SPTEventType)eventTypeRaw
+{
+    return (SPTEventType)[[self eventType] intValue];
+}
+
+- (void)setEventTypeRaw:(SPTEventType)type
+{
+    [self setEventType:[NSNumber numberWithInt:type]];
 }
 
 - (void)finishEvent

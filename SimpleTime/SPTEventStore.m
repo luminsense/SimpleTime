@@ -130,7 +130,7 @@
     event.title = title;
     event.beginDate = beginDate;
     event.endDate = endDate;
-    event.eventType = type;
+    [event setEventTypeRaw:type];
     
     // Testing events must be finished already
     // Or it will cause error in [self loadCurrentEvent] next time the app launches
@@ -147,7 +147,7 @@
 {
     SPTEvent *event = [NSEntityDescription insertNewObjectForEntityForName:[SPTEvent entityName] inManagedObjectContext:self.context];
     event.title = title;
-    event.eventType = type;
+    [event setEventTypeRaw:type];
     event.isFinished = NO;              // Raw event must not be finished
     event.beginDate = [NSDate date];    // Event begins now
     event.endDate = event.beginDate;    // Temporarily no endDate
@@ -196,14 +196,38 @@
     return result;
 }
 
+- (NSArray *)getAllEvents
+{
+    // Create the request with entity description
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:[SPTEvent entityName] inManagedObjectContext:self.context];
+    request.entity = e;
+    
+    // Set sort descriptor and predicate
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"beginDate" ascending:NO];
+    request.sortDescriptors = @[sd];
+    
+    // Excute fetch request
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    if (!result) {
+        [NSException raise:@"Fetch all events failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    return result;
+}
+
 #pragma mark - Save changes
 
 - (BOOL)saveChanges
 {
+    NSLog(@"Start Saving...");
     NSError *error;
     BOOL successful = [self.context save:&error];
     if (!successful) {
         NSLog(@"Error saving: %@", [error localizedDescription]);
+    } else {
+        NSLog(@"Save Successful");
     }
     return successful;
 }
