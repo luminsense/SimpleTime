@@ -98,9 +98,10 @@
     NSEntityDescription *e = [NSEntityDescription entityForName:[SPTEvent entityName] inManagedObjectContext:self.context];
     request.entity = e;
     
-    request.predicate = [NSPredicate predicateWithFormat:@"isFinished = %@", NO];
+    request.predicate = [NSPredicate predicateWithFormat:@"isFinished == NO"];
     NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"beginDate" ascending:NO];
     request.sortDescriptors = @[sd];
+
     
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
@@ -116,6 +117,7 @@
             NSLog(@"Potential mistake in database: there's more than one current event, should only have one.");
         }
     }
+    NSLog(@"Current event: %@.", self.currentEvent.title);
 }
 
 #pragma mark - Add Events
@@ -134,7 +136,7 @@
     
     // Testing events must be finished already
     // Or it will cause error in [self loadCurrentEvent] next time the app launches
-    event.isFinished = YES;
+    [event setIsFinishedRaw:YES];
     
     [self saveChanges];
     return event;
@@ -148,7 +150,7 @@
     SPTEvent *event = [NSEntityDescription insertNewObjectForEntityForName:[SPTEvent entityName] inManagedObjectContext:self.context];
     event.title = title;
     [event setEventTypeRaw:type];
-    event.isFinished = NO;              // Raw event must not be finished
+    [event setIsFinishedRaw:NO];        // Raw event must not be finished
     event.beginDate = [NSDate date];    // Event begins now
     event.endDate = event.beginDate;    // Temporarily no endDate
     
@@ -184,7 +186,7 @@
     // Set sort descriptor and predicate
     NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"beginDate" ascending:YES];
     request.sortDescriptors = @[sd];
-    request.predicate = [NSPredicate predicateWithFormat:@"(beginDate > %@ AND beginDate < %@) OR (endDate > %@ AND endDate < %@)", startOfDay, endOfDay, startOfDay, endOfDay];
+    request.predicate = [NSPredicate predicateWithFormat:@"(beginDate > %@ AND beginDate < %@) OR (endDate > %@ AND endDate < %@) AND isFinished == YES", startOfDay, endOfDay, startOfDay, endOfDay];
     
     // Excute fetch request
     NSError *error;

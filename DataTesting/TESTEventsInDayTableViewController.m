@@ -1,26 +1,26 @@
 //
-//  TESTAllEventsTableViewController.m
+//  TESTEventsInDayTableViewController.m
 //  SimpleTime
 //
-//  Created by Lumi on 14-8-13.
+//  Created by Lumi on 14-8-14.
 //  Copyright (c) 2014年 LumiNg. All rights reserved.
 //
 
-#import "TESTAllEventsTableViewController.h"
+#import "TESTEventsInDayTableViewController.h"
 #import "SPTEvent.h"
 #import "SPTEventStore.h"
 
-@interface TESTAllEventsTableViewController ()
+@interface TESTEventsInDayTableViewController ()
 @property (nonatomic, strong) NSArray *events;
 @end
 
-@implementation TESTAllEventsTableViewController
+@implementation TESTEventsInDayTableViewController
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+        // Custom initialization
     }
     return self;
 }
@@ -28,17 +28,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TESTCell"];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.events = [[SPTEventStore sharedStore] getAllEvents];
+    self.events = [[SPTEventStore sharedStore] getEventsForDate:self.date];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -53,20 +59,21 @@
     return self.events.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TESTCell" forIndexPath:indexPath];
     
     SPTEvent *thisEvent = (SPTEvent *)self.events[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@) (%@)", thisEvent.title, thisEvent.eventType, thisEvent.isFinished];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@)", thisEvent.title, thisEvent.eventType];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
     NSString *beginDateString = [dateFormatter stringFromDate:thisEvent.beginDate];
     NSString *endDateString = [dateFormatter stringFromDate:thisEvent.endDate];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", beginDateString, endDateString];
+    
+    return cell;
     
     return cell;
 }

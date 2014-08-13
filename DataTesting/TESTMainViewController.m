@@ -9,7 +9,11 @@
 #import "TESTMainViewController.h"
 #import "SPTEventStore.h"
 
-@interface TESTMainViewController ()
+@interface TESTMainViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *currentEventTitleField;
+@property (weak, nonatomic) IBOutlet UILabel *currentEventStartDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *currentEventFinishButton;
+
 
 @end
 
@@ -27,8 +31,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [SPTEventStore sharedStore];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([[SPTEventStore sharedStore] hasCurrentEvent]) {
+        
+        self.currentEventTitleField.enabled = NO;
+        self.currentEventTitleField.text = [[SPTEventStore sharedStore] currentEvent].title;
+        self.currentEventFinishButton.enabled = YES;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+        self.currentEventStartDateLabel.text = [dateFormatter stringFromDate:[[SPTEventStore sharedStore] currentEvent].beginDate];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +54,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    if (textField == self.currentEventTitleField) {
+        
+        [[SPTEventStore sharedStore] addEventWithTitle:self.currentEventTitleField.text eventType:SPTEventTypeNone];
+        
+        self.currentEventTitleField.enabled = NO;
+        self.currentEventTitleField.text = [[SPTEventStore sharedStore] currentEvent].title;
+        self.currentEventFinishButton.enabled = YES;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+        self.currentEventStartDateLabel.text = [dateFormatter stringFromDate:[[SPTEventStore sharedStore] currentEvent].beginDate];
+        
+    }
+    return YES;
+}
+
+- (IBAction)finishCurrentEvent:(id)sender
+{
+    [[SPTEventStore sharedStore] finishCurrentEvent];
+    
+    self.currentEventTitleField.enabled = YES;
+    self.currentEventTitleField.text = @"";
+    self.currentEventFinishButton.enabled = NO;
+    self.currentEventStartDateLabel.text = @"N/A";
+}
 
 
 /*

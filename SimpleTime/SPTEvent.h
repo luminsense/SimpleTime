@@ -2,7 +2,7 @@
 //  SPTEvent.h
 //  SimpleTime
 //
-//  Created by Lumi on 14-8-13.
+//  Created by Lumi on 14-8-14.
 //  Copyright (c) 2014年 LumiNg. All rights reserved.
 //
 
@@ -27,14 +27,17 @@ typedef NS_ENUM(NSInteger, SPTEventType) {
 
 @property (nonatomic, retain) NSDate * beginDate;
 @property (nonatomic, retain) NSDate * endDate;
-@property (nonatomic) NSNumber * eventType;
-@property (nonatomic) BOOL isFinished;
+@property (nonatomic, retain) NSNumber * eventType;
+@property (nonatomic, retain) NSNumber * isFinished;
 @property (nonatomic, retain) NSString * title;
 
 + (NSString*)entityName;
 
 - (SPTEventType)eventTypeRaw;
 - (void)setEventTypeRaw:(SPTEventType)type;
+
+- (BOOL)isFinishedRaw;
+- (void)setIsFinishedRaw:(BOOL)flag;
 
 - (void)finishEvent;
 

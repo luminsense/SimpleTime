@@ -25,7 +25,9 @@
 		20A23A65199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
 		20A23A6D199924F700E4C577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20A23A6B199924F700E4C577 /* InfoPlist.strings */; };
 		20A23A6F199924F700E4C577 /* SimpleTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A23A6E199924F700E4C577 /* SimpleTimeTests.m */; };
-		20E4A5D0199B74A400322A4A /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E4A5CF199B74A400322A4A /* SPTEvent.m */; };
+		20C8045F199BDA4F005DCCCB /* TESTQueryDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8045E199BDA4F005DCCCB /* TESTQueryDateViewController.m */; };
+		20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */; };
+		20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8046A199BE9A9005DCCCB /* SPTEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +67,12 @@
 		20A23A6A199924F700E4C577 /* SimpleTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTimeTests-Info.plist"; sourceTree = "<group>"; };
 		20A23A6C199924F700E4C577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20A23A6E199924F700E4C577 /* SimpleTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTimeTests.m; sourceTree = "<group>"; };
-		20E4A5CE199B74A400322A4A /* SPTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEvent.h; path = SimpleTime/SPTEvent.h; sourceTree = "<group>"; };
-		20E4A5CF199B74A400322A4A /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
+		20C8045D199BDA4F005DCCCB /* TESTQueryDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTQueryDateViewController.h; path = DataTesting/TESTQueryDateViewController.h; sourceTree = "<group>"; };
+		20C8045E199BDA4F005DCCCB /* TESTQueryDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTQueryDateViewController.m; path = DataTesting/TESTQueryDateViewController.m; sourceTree = "<group>"; };
+		20C80460199BDA6D005DCCCB /* TESTEventsInDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTEventsInDayTableViewController.h; path = DataTesting/TESTEventsInDayTableViewController.h; sourceTree = "<group>"; };
+		20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTEventsInDayTableViewController.m; path = DataTesting/TESTEventsInDayTableViewController.m; sourceTree = "<group>"; };
+		20C80469199BE9A9005DCCCB /* SPTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEvent.h; path = SimpleTime/SPTEvent.h; sourceTree = "<group>"; };
+		20C8046A199BE9A9005DCCCB /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,10 @@
 				20557D30199B940B002633CC /* TESTNewEventViewController.m */,
 				20557D2C199B93F0002633CC /* TESTAllEventsTableViewController.h */,
 				20557D2D199B93F1002633CC /* TESTAllEventsTableViewController.m */,
+				20C8045D199BDA4F005DCCCB /* TESTQueryDateViewController.h */,
+				20C8045E199BDA4F005DCCCB /* TESTQueryDateViewController.m */,
+				20C80460199BDA6D005DCCCB /* TESTEventsInDayTableViewController.h */,
+				20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */,
 			);
 			name = "Controllers for Data Testing";
 			sourceTree = "<group>";
@@ -183,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */,
-				20E4A5CE199B74A400322A4A /* SPTEvent.h */,
-				20E4A5CF199B74A400322A4A /* SPTEvent.m */,
+				20C80469199BE9A9005DCCCB /* SPTEvent.h */,
+				20C8046A199BE9A9005DCCCB /* SPTEvent.m */,
 				206FA684199A8096003E25B3 /* SPTEventStore.h */,
 				206FA685199A8096003E25B3 /* SPTEventStore.m */,
 			);
@@ -292,9 +302,11 @@
 				206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */,
 				20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */,
 				20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */,
+				20C8045F199BDA4F005DCCCB /* TESTQueryDateViewController.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
+				20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */,
 				20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */,
-				20E4A5D0199B74A400322A4A /* SPTEvent.m in Sources */,
+				20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */,
 				20A23A56199924F700E4C577 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

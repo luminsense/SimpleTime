@@ -2,7 +2,7 @@
 //  SPTEvent.m
 //  SimpleTime
 //
-//  Created by Lumi on 14-8-13.
+//  Created by Lumi on 14-8-14.
 //  Copyright (c) 2014年 LumiNg. All rights reserved.
 //
 
@@ -32,9 +32,19 @@
     [self setEventType:[NSNumber numberWithInt:type]];
 }
 
+- (BOOL)isFinishedRaw
+{
+    return [[self isFinished] boolValue];
+}
+
+- (void)setIsFinishedRaw:(BOOL)flag
+{
+    self.isFinished = [NSNumber numberWithBool:flag];
+}
+
 - (void)finishEvent
 {
-    self.isFinished = YES;
+    [self setIsFinishedRaw:YES];
     self.endDate = [NSDate date];
 }
 

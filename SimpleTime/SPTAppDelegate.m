@@ -7,11 +7,13 @@
 //
 
 #import "SPTAppDelegate.h"
+#import "SPTEventStore.h"
 
 @implementation SPTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [SPTEventStore sharedStore];
     return YES;
 }
 
