@@ -56,19 +56,19 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Event Start Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-Qn-ieX">
-                                <rect key="frame" x="20" y="178" width="280" height="21"/>
+                                <rect key="frame" x="20" y="178" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ge-M7-VgD">
-                                <rect key="frame" x="20" y="207" width="280" height="21"/>
+                                <rect key="frame" x="20" y="207" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xa-AJ-F5a">
-                                <rect key="frame" x="20" y="403" width="280" height="30"/>
+                                <rect key="frame" x="20" y="457" width="280" height="30"/>
                                 <state key="normal" title="Finish current event">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,6 +76,12 @@
                                     <action selector="finishCurrentEvent:" destination="mWv-Ad-im5" eventType="touchUpInside" id="5eT-g0-XQF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9f-WF-cxw">
+                                <rect key="frame" x="20" y="367" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -90,11 +96,12 @@
                         <outlet property="currentEventFinishButton" destination="5Xa-AJ-F5a" id="3hn-pF-A9t"/>
                         <outlet property="currentEventStartDateLabel" destination="5Ge-M7-VgD" id="J0z-u3-GMm"/>
                         <outlet property="currentEventTitleField" destination="vt9-in-QAH" id="glW-zZ-ocU"/>
+                        <outlet property="eventTypeTestingLabel" destination="S9f-WF-cxw" id="fFt-98-K8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oze-dA-s8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="141"/>
+            <point key="canvasLocation" x="519" y="141"/>
         </scene>
         <!--All Events Table View Controller - All Events-->
         <scene sceneID="1uJ-Uv-sW6">

@@ -15,13 +15,13 @@
 typedef NS_ENUM(NSInteger, SPTEventType) {
     SPTEventTypeNone            = 0,
     SPTEventTypeWork            = 1,
-    SPTEventTypeWorkout         = 2,
+    SPTEventTypeDining          = 2,
     SPTEventTypeFun             = 3,
     SPTEventTypeSleep           = 4,
-    SPTEventTypeDining          = 5,
-    SPTEventTypeTransportation  = 6,
+    SPTEventTypeWorkout         = 5,
+    SPTEventTypePersonal        = 6,
     SPTEventTypeRead            = 7,
-    SPTEventTypePersonal        = 8,
+    SPTEventTypeTransport       = 8,
     SPTEventTypeHome            = 9
 };
 

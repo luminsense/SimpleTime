@@ -8,12 +8,16 @@
 
 #import "TESTMainViewController.h"
 #import "SPTEventStore.h"
+#import "MZTimerLabel.h"
+#import <QuartzCore/QuartzCore.h>
+#import "SPTEventTypeSelectView.h"
 
-@interface TESTMainViewController () <UITextFieldDelegate>
+@interface TESTMainViewController () <UITextFieldDelegate, SPTEventTypeSelectViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *currentEventTitleField;
 @property (weak, nonatomic) IBOutlet UILabel *currentEventStartDateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *currentEventFinishButton;
-
+@property (strong, nonatomic) MZTimerLabel *currentEventTimer;
+@property (weak, nonatomic) IBOutlet UILabel *eventTypeTestingLabel;
 
 @end
 
@@ -31,6 +35,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.currentEventTimer = [[MZTimerLabel alloc] initWithFrame:CGRectMake(0, 250, self.view.frame.size.width, 40)];
+    self.currentEventTimer.timerType = MZTimerLabelTypeStopWatch;
+    self.currentEventTimer.timeLabel.backgroundColor = [UIColor clearColor];
+    self.currentEventTimer.timeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:28];
+    self.currentEventTimer.timeLabel.textColor = [UIColor blackColor];
+    self.currentEventTimer.timeLabel.textAlignment = NSTextAlignmentCenter; //UITextAlignmentCenter is deprecated in iOS 7.0
+    
+    [self.view addSubview:self.currentEventTimer];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,7 +58,18 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
         self.currentEventStartDateLabel.text = [dateFormatter stringFromDate:[[SPTEventStore sharedStore] currentEvent].beginDate];
         
+        NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:[[SPTEventStore sharedStore] currentEvent].beginDate];
+        [self.currentEventTimer setStopWatchTime:interval];
+        [self.currentEventTimer start];
+        
     }
+    
+    // Type selector testing
+    SPTEventTypeSelectView *selector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake([SPTEventTypeSelectView marginLeft], 240, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
+    selector.delegate = self;
+    [self.view addSubview:selector];
+    
+    self.eventTypeTestingLabel.text = [NSString stringWithFormat:@"%ld", [selector currentSelectedType]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +93,10 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
         self.currentEventStartDateLabel.text = [dateFormatter stringFromDate:[[SPTEventStore sharedStore] currentEvent].beginDate];
         
+        // Start timer
+        [self.currentEventTimer reset];
+        [self.currentEventTimer start];
+        
     }
     return YES;
 }
@@ -81,8 +109,16 @@
     self.currentEventTitleField.text = @"";
     self.currentEventFinishButton.enabled = NO;
     self.currentEventStartDateLabel.text = @"N/A";
+    
+    // End timer
+    [self.currentEventTimer pause];
 }
 
+- (void)valueDidChangeInTypeSelectView:(SPTEventTypeSelectView *)selector
+{
+    SPTEventType type = [selector currentSelectedType];
+    self.eventTypeTestingLabel.text = [NSString stringWithFormat:@"%ld", type];
+}
 
 /*
 #pragma mark - Navigation

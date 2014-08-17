@@ -165,7 +165,7 @@
             type = SPTEventTypeDining;
             break;
         case 6:
-            type = SPTEventTypeTransportation;
+            type = SPTEventTypeTransport;
             break;
         case 7:
             type = SPTEventTypeRead;
