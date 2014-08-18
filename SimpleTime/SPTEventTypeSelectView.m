@@ -20,7 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.items = [[NSMutableArray alloc] init];
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         
         // Loading event type select items
         
@@ -78,22 +78,32 @@
     }
 }
 
-
 - (void)didSelectItem:(SPTEventTypeSelectItem *)item
 {
     self.currentSelectedItem = item;
-    [self.delegate valueDidChangeInTypeSelectView:self];
     for (SPTEventTypeSelectItem *thisItem in self.items) {
         if (thisItem != item) {
             [thisItem resetItem];
         }
     }
+    [self.delegate valueDidChangeInTypeSelectView:self];
 }
 
 - (SPTEventType)currentSelectedType
 {
     NSInteger selectedIndex = [self.items indexOfObjectIdenticalTo:self.currentSelectedItem];
     return (SPTEventType)selectedIndex;
+}
+
+- (void)reset
+{
+    for (SPTEventTypeSelectItem *thisItem in self.items) {
+        if ([self.items indexOfObject:thisItem] == 0) {
+            [thisItem selectItem];
+        } else {
+            [thisItem resetItem];
+        }
+    }
 }
 
 + (float)width

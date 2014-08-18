@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20225A6A19A1ABAB00E5A9CE /* addEventButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6519A1ABAB00E5A9CE /* addEventButton.png */; };
+		20225A6B19A1ABAB00E5A9CE /* currentEventFinishButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */; };
+		20225A6C19A1ABAB00E5A9CE /* myRecordButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6719A1ABAB00E5A9CE /* myRecordButton.png */; };
+		20225A6D19A1ABAB00E5A9CE /* newEventCancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */; };
+		20225A6E19A1ABAB00E5A9CE /* newEventDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6919A1ABAB00E5A9CE /* newEventDoneButton.png */; };
+		20225A7319A1ABC400E5A9CE /* eventTypeNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7019A1ABC400E5A9CE /* eventTypeNone.png */; };
+		20225A7419A1ABC400E5A9CE /* eventTypeNonePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7119A1ABC400E5A9CE /* eventTypeNonePressed.png */; };
+		20225A7519A1ABC400E5A9CE /* eventTypeNoneSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7219A1ABC400E5A9CE /* eventTypeNoneSelected.png */; };
 		20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D2A199B93D8002633CC /* TESTMainViewController.m */; };
 		20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D2D199B93F1002633CC /* TESTAllEventsTableViewController.m */; };
 		20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D30199B940B002633CC /* TESTNewEventViewController.m */; };
@@ -15,9 +23,6 @@
 		206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FA685199A8096003E25B3 /* SPTEventStore.m */; };
 		2082584A199DE9B4005044A0 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20825849199DE9B4005044A0 /* MZTimerLabel.m */; };
 		2093679019A0909700CCFBAC /* SPTEventTypeSelectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2093678F19A0909700CCFBAC /* SPTEventTypeSelectItem.m */; };
-		2093679519A0A06D00CCFBAC /* eventTypeNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2093679419A0A06D00CCFBAC /* eventTypeNone.png */; };
-		2093679819A0A39000CCFBAC /* eventTypeNonePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2093679619A0A39000CCFBAC /* eventTypeNonePressed.png */; };
-		2093679919A0A39000CCFBAC /* eventTypeNoneSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2093679719A0A39000CCFBAC /* eventTypeNoneSelected.png */; };
 		209367A019A0ACC700CCFBAC /* SPTEventTypeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2093679F19A0ACC700CCFBAC /* SPTEventTypeSelectView.m */; };
 		209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */; };
 		209367A619A0C3CB00CCFBAC /* SPTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209367A519A0C3CB00CCFBAC /* SPTMainViewController.m */; };
@@ -36,6 +41,7 @@
 		20C8045F199BDA4F005DCCCB /* TESTQueryDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8045E199BDA4F005DCCCB /* TESTQueryDateViewController.m */; };
 		20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */; };
 		20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8046A199BE9A9005DCCCB /* SPTEvent.m */; };
+		20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D3CBFD19A240290050FF7E /* SPTColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20225A6519A1ABAB00E5A9CE /* addEventButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addEventButton.png; path = images/addEventButton.png; sourceTree = "<group>"; };
+		20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = currentEventFinishButton.png; path = images/currentEventFinishButton.png; sourceTree = "<group>"; };
+		20225A6719A1ABAB00E5A9CE /* myRecordButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myRecordButton.png; path = images/myRecordButton.png; sourceTree = "<group>"; };
+		20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newEventCancelButton.png; path = images/newEventCancelButton.png; sourceTree = "<group>"; };
+		20225A6919A1ABAB00E5A9CE /* newEventDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newEventDoneButton.png; path = images/newEventDoneButton.png; sourceTree = "<group>"; };
+		20225A7019A1ABC400E5A9CE /* eventTypeNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNone.png; path = eventTypeImages/eventTypeNone.png; sourceTree = "<group>"; };
+		20225A7119A1ABC400E5A9CE /* eventTypeNonePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNonePressed.png; path = eventTypeImages/eventTypeNonePressed.png; sourceTree = "<group>"; };
+		20225A7219A1ABC400E5A9CE /* eventTypeNoneSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNoneSelected.png; path = eventTypeImages/eventTypeNoneSelected.png; sourceTree = "<group>"; };
 		20557D29199B93D8002633CC /* TESTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTMainViewController.h; path = DataTesting/TESTMainViewController.h; sourceTree = "<group>"; };
 		20557D2A199B93D8002633CC /* TESTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTMainViewController.m; path = DataTesting/TESTMainViewController.m; sourceTree = "<group>"; };
 		20557D2C199B93F0002633CC /* TESTAllEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTAllEventsTableViewController.h; path = DataTesting/TESTAllEventsTableViewController.h; sourceTree = "<group>"; };
@@ -63,9 +77,6 @@
 		20825849199DE9B4005044A0 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		2093678E19A0909700CCFBAC /* SPTEventTypeSelectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventTypeSelectItem.h; path = SimpleTime/SPTEventTypeSelectItem.h; sourceTree = "<group>"; };
 		2093678F19A0909700CCFBAC /* SPTEventTypeSelectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventTypeSelectItem.m; path = SimpleTime/SPTEventTypeSelectItem.m; sourceTree = "<group>"; };
-		2093679419A0A06D00CCFBAC /* eventTypeNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventTypeNone.png; sourceTree = "<group>"; };
-		2093679619A0A39000CCFBAC /* eventTypeNonePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventTypeNonePressed.png; sourceTree = "<group>"; };
-		2093679719A0A39000CCFBAC /* eventTypeNoneSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventTypeNoneSelected.png; sourceTree = "<group>"; };
 		2093679E19A0ACC700CCFBAC /* SPTEventTypeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventTypeSelectView.h; path = SimpleTime/SPTEventTypeSelectView.h; sourceTree = "<group>"; };
 		2093679F19A0ACC700CCFBAC /* SPTEventTypeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventTypeSelectView.m; path = SimpleTime/SPTEventTypeSelectView.m; sourceTree = "<group>"; };
 		209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SimpleTime.storyboard; path = SimpleTime/SimpleTime.storyboard; sourceTree = "<group>"; };
@@ -93,6 +104,8 @@
 		20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTEventsInDayTableViewController.m; path = DataTesting/TESTEventsInDayTableViewController.m; sourceTree = "<group>"; };
 		20C80469199BE9A9005DCCCB /* SPTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEvent.h; path = SimpleTime/SPTEvent.h; sourceTree = "<group>"; };
 		20C8046A199BE9A9005DCCCB /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
+		20D3CBFC19A240290050FF7E /* SPTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTColor.h; path = SimpleTime/SPTColor.h; sourceTree = "<group>"; };
+		20D3CBFD19A240290050FF7E /* SPTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTColor.m; path = SimpleTime/SPTColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +132,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20225A6F19A1ABAF00E5A9CE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				20225A6519A1ABAB00E5A9CE /* addEventButton.png */,
+				20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */,
+				20225A6719A1ABAB00E5A9CE /* myRecordButton.png */,
+				20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */,
+				20225A6919A1ABAB00E5A9CE /* newEventDoneButton.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		2093678D19A08ED400CCFBAC /* Event Type Selector Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +158,9 @@
 		2093679A19A0A39700CCFBAC /* Event Type Images */ = {
 			isa = PBXGroup;
 			children = (
-				2093679419A0A06D00CCFBAC /* eventTypeNone.png */,
-				2093679619A0A39000CCFBAC /* eventTypeNonePressed.png */,
-				2093679719A0A39000CCFBAC /* eventTypeNoneSelected.png */,
+				20225A7019A1ABC400E5A9CE /* eventTypeNone.png */,
+				20225A7119A1ABC400E5A9CE /* eventTypeNonePressed.png */,
+				20225A7219A1ABC400E5A9CE /* eventTypeNoneSelected.png */,
 			);
 			name = "Event Type Images";
 			sourceTree = "<group>";
@@ -150,14 +175,25 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		209367A719A0D84A00CCFBAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2093678D19A08ED400CCFBAC /* Event Type Selector Control */,
+				20D3CBFC19A240290050FF7E /* SPTColor.h */,
+				20D3CBFD19A240290050FF7E /* SPTColor.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		20A23A3D199924F700E4C577 = {
 			isa = PBXGroup;
 			children = (
 				20825848199DE9B4005044A0 /* MZTimerLabel.h */,
 				20825849199DE9B4005044A0 /* MZTimerLabel.m */,
+				20225A6F19A1ABAF00E5A9CE /* Images */,
 				2093679A19A0A39700CCFBAC /* Event Type Images */,
-				2093678D19A08ED400CCFBAC /* Event Type Selector Control */,
 				20E3C2D6199928250060AF41 /* Model */,
+				209367A719A0D84A00CCFBAC /* View */,
 				209367A319A0C36200CCFBAC /* Controller */,
 				20E3C2C6199926CF0060AF41 /* Controller for Data Testing */,
 				20A23A4F199924F700E4C577 /* SimpleTime */,
@@ -333,13 +369,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2093679819A0A39000CCFBAC /* eventTypeNonePressed.png in Resources */,
+				20225A6B19A1ABAB00E5A9CE /* currentEventFinishButton.png in Resources */,
 				209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */,
-				2093679519A0A06D00CCFBAC /* eventTypeNone.png in Resources */,
+				20225A6C19A1ABAB00E5A9CE /* myRecordButton.png in Resources */,
 				20A23A54199924F700E4C577 /* InfoPlist.strings in Resources */,
-				2093679919A0A39000CCFBAC /* eventTypeNoneSelected.png in Resources */,
+				20225A6A19A1ABAB00E5A9CE /* addEventButton.png in Resources */,
+				20225A6D19A1ABAB00E5A9CE /* newEventCancelButton.png in Resources */,
 				20557D33199B9432002633CC /* DataTesting.storyboard in Resources */,
+				20225A7419A1ABC400E5A9CE /* eventTypeNonePressed.png in Resources */,
 				20A23A5C199924F700E4C577 /* Images.xcassets in Resources */,
+				20225A7519A1ABC400E5A9CE /* eventTypeNoneSelected.png in Resources */,
+				20225A7319A1ABC400E5A9CE /* eventTypeNone.png in Resources */,
+				20225A6E19A1ABAB00E5A9CE /* newEventDoneButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +407,7 @@
 				2082584A199DE9B4005044A0 /* MZTimerLabel.m in Sources */,
 				20C8045F199BDA4F005DCCCB /* TESTQueryDateViewController.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
+				20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */,
 				20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */,
 				209367A619A0C3CB00CCFBAC /* SPTMainViewController.m in Sources */,
 				20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */,
@@ -491,8 +533,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
 				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -505,8 +548,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
 				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

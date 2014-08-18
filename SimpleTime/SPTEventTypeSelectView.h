@@ -23,6 +23,7 @@
 @property (nonatomic, weak) SPTEventTypeSelectItem *currentSelectedItem;
 
 - (SPTEventType)currentSelectedType;
+- (void)reset;
 
 + (float)width;
 + (float)height;

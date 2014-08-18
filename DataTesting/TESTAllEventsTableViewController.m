@@ -34,6 +34,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.events = [[SPTEventStore sharedStore] getAllEvents];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

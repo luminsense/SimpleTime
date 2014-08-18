@@ -31,15 +31,175 @@
                     <view key="view" contentMode="scaleToFill" id="6xa-98-kxd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you doing now?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u41-Aq-lnj">
+                                <rect key="frame" x="15" y="110" width="290" height="44"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmq-jg-hI5">
+                                <rect key="frame" x="120" y="190" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="AEY-S8-xMW"/>
+                                    <constraint firstAttribute="height" constant="80" id="pam-3y-41N"/>
+                                </constraints>
+                                <state key="normal" image="addEventButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addEvent:" destination="9Oo-Jh-DcQ" eventType="touchUpInside" id="gWG-qb-xlT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-O6-VFu">
+                                <rect key="frame" x="90" y="431" width="140" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="J2I-b1-qAq"/>
+                                    <constraint firstAttribute="width" constant="140" id="qZS-p3-Jrt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="My Record" backgroundImage="myRecordButton.png">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="STT-bB-Iel" kind="push" id="LJ0-WY-DMA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eo-NW-khn">
+                                <rect key="frame" x="269" y="24" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="J7k-qx-kr0"/>
+                                    <constraint firstAttribute="width" constant="36" id="iyQ-VU-UMe"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="newEventDoneButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addEventDone:" destination="9Oo-Jh-DcQ" eventType="touchUpInside" id="HeF-dB-nhX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-nl-si2">
+                                <rect key="frame" x="15" y="64" width="290" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EEp-xg-3bu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-Vi-RIU">
+                                <rect key="frame" x="15" y="144" width="290" height="44"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pH-3j-fe7">
+                                <rect key="frame" x="15" y="24" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="Kdx-MF-wUX"/>
+                                    <constraint firstAttribute="height" constant="36" id="szr-KQ-SRS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="newEventCancelButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addEventCancelled:" destination="9Oo-Jh-DcQ" eventType="touchUpInside" id="OWE-nI-mt2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-sG-ocl">
+                                <rect key="frame" x="90" y="270" width="140" height="50"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Finish" backgroundImage="currentEventFinishButton.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishCurrentEvent:" destination="9Oo-Jh-DcQ" eventType="touchUpInside" id="kvt-hL-tyC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VQd-nl-si2" firstAttribute="top" secondItem="6xa-98-kxd" secondAttribute="top" constant="64" id="570-Yw-iLD"/>
+                            <constraint firstAttribute="centerX" secondItem="nmq-jg-hI5" secondAttribute="centerX" id="5WZ-mZ-fFb"/>
+                            <constraint firstAttribute="trailing" secondItem="VQd-nl-si2" secondAttribute="trailing" constant="15" id="5td-ya-bSp"/>
+                            <constraint firstAttribute="centerX" secondItem="jqX-O6-VFu" secondAttribute="centerX" id="6bv-cm-pvj"/>
+                            <constraint firstItem="nmq-jg-hI5" firstAttribute="top" secondItem="6xa-98-kxd" secondAttribute="top" constant="190" id="KA5-Cw-ypG"/>
+                            <constraint firstItem="0pH-3j-fe7" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" constant="4" id="KUH-FA-1lo"/>
+                            <constraint firstItem="4eo-NW-khn" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" constant="4" id="Zpe-8l-iOx"/>
+                            <constraint firstItem="0pH-3j-fe7" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="15" id="d9x-Bc-6Hi"/>
+                            <constraint firstAttribute="trailing" secondItem="4eo-NW-khn" secondAttribute="trailing" constant="15" id="mH5-9X-VCk"/>
+                            <constraint firstItem="9Dn-E4-IJF" firstAttribute="top" secondItem="jqX-O6-VFu" secondAttribute="bottom" constant="87" id="pfs-US-CNG"/>
+                            <constraint firstItem="VQd-nl-si2" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="15" id="uis-18-AoH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r5e-2a-OSH"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="addEventButton" destination="nmq-jg-hI5" id="QZ8-Qb-4mh"/>
+                        <outlet property="cancelButton" destination="0pH-3j-fe7" id="cfR-nc-Fez"/>
+                        <outlet property="currentEventFinishButton" destination="KYu-sG-ocl" id="jZe-Nc-Wbj"/>
+                        <outlet property="currentEventTitleLabel" destination="nxE-Vi-RIU" id="lM5-n9-nwM"/>
+                        <outlet property="doneButton" destination="4eo-NW-khn" id="0lB-dd-LpJ"/>
+                        <outlet property="eventTitleField" destination="VQd-nl-si2" id="21N-5w-waA"/>
+                        <outlet property="myRecordButton" destination="jqX-O6-VFu" id="WH6-Cg-fnh"/>
+                        <outlet property="titleLabel" destination="u41-Aq-lnj" id="1mM-3i-Vbp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXz-4t-Gca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="554"/>
+            <point key="canvasLocation" x="1140" y="554"/>
+        </scene>
+        <!--All Events Table View Controller - All Events-->
+        <scene sceneID="vYy-WA-Odw">
+            <objects>
+                <tableViewController id="STT-bB-Iel" customClass="TESTAllEventsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ph0-IL-paP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TESTCell" textLabel="pQ0-QY-O3m" detailTextLabel="06D-gT-b0x" style="IBUITableViewCellStyleSubtitle" id="Krk-kU-6r6">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Krk-kU-6r6" id="ngX-6J-mzK">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pQ0-QY-O3m">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="06D-gT-b0x">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="STT-bB-Iel" id="FvG-Mx-MGz"/>
+                            <outlet property="delegate" destination="STT-bB-Iel" id="JvY-gk-cLW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="All Events" id="TPc-HT-fa4"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="El6-MR-fVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="554"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addEventButton.png" width="160" height="160"/>
+        <image name="currentEventFinishButton.png" width="280" height="100"/>
+        <image name="myRecordButton.png" width="280" height="100"/>
+        <image name="newEventCancelButton.png" width="72" height="72"/>
+        <image name="newEventDoneButton.png" width="72" height="72"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
