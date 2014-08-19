@@ -16,7 +16,7 @@
 - (void)didSelectItem:(SPTEventTypeSelectItem *)item;
 @end
 
-@interface SPTEventTypeSelectItem : UIControl
+@interface SPTEventTypeSelectItem : UIView
 
 @property (nonatomic, weak) id <SPTEventTypeSelectItemDelegate> delegate;
 @property (nonatomic) SPTEventType type;

@@ -11,8 +11,11 @@
 #import "MZTimerLabel.h"
 #import "SPTColor.h"
 #import "SPTEventStore.h"
+#import "VWWWaterView.h"
 
 @interface SPTMainViewController () <SPTEventTypeSelectViewDelegate, UITextFieldDelegate>
+
+@property (strong, nonatomic) VWWWaterView *waterView;
 
 // Components in No Event Status
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -49,13 +52,17 @@
     
     self.eventTitleField.delegate = self;
     
+    // Load water effect
+    self.waterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.waterView];
+    
     // Load type selector
-    self.typeSelector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake(15, 128, 290, 110)];
+    self.typeSelector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake(15, 128, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
     self.typeSelector.delegate = self;
     [self.view addSubview:self.typeSelector];
     self.typeSelector.hidden = YES;
     
-    // TODO: Load highlight background image of buttons
+    // TODO: Load highlight background image for buttons (after complete visual design)
     
     
     // Load MZTimer
@@ -68,36 +75,48 @@
     [self.view addSubview:self.currentEventTimer];
     self.currentEventTimer.hidden = YES;
     
+    self.cancelButton.hidden = YES;
+    self.doneButton.hidden = YES;
+    self.eventTitleField.hidden = YES;
+    
     // Test
     /*
     self.currentEventTitleLabel.backgroundColor = [UIColor redColor];
     self.titleLabel.backgroundColor = [UIColor greenColor];
     self.currentEventTimer.backgroundColor = [UIColor blueColor];
+    self.eventTitleField.backgroundColor = [UIColor lightGrayColor];
      */
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    self.cancelButton.hidden = YES;
-    self.doneButton.hidden = YES;
-    self.eventTitleField.hidden = YES;
+    [self.view sendSubviewToBack:self.waterView];
+    
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLayoutSubviews
 {
+    [super viewDidLayoutSubviews];
+    
     // Reset color
     self.titleLabel.textColor = [SPTColor labelColorDark];
     self.myRecordButton.titleLabel.textColor = [SPTColor labelColorLight];
     self.currentEventTitleLabel.textColor = [SPTColor labelColorDark];
     self.currentEventFinishButton.titleLabel.textColor = [SPTColor mainColor];
+    // [[self.eventTitleField valueForKey:@"textInputTraits"] setValue:[UIColor clearColor] forKey:@"insertionPointColor"];
+
     
     if ([[SPTEventStore sharedStore] hasCurrentEvent]) {
         [self loadWithCurrentEvent];
     } else {
         [self loadWithoutCurrentEvent];
     }
+    
+    NSLog(@"View Did Layour Subviews");
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,13 +145,10 @@
     NSString *title;
     if (self.eventTitleField.text.length > 0) {
         title = self.eventTitleField.text;
-        NSLog(@">>> Has Text");
     } else if (self.eventTitleField.placeholder.length > 0) {
         title = self.eventTitleField.placeholder;
-        NSLog(@">>> Has Placeholder");
     } else {
         title = @"Default event";
-        NSLog(@">>> No Title");
     }
     
     // Add new event to store
@@ -211,7 +227,6 @@
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24.0];
     self.titleLabel.textColor = [SPTColor labelColorLight];
     self.titleLabel.text = @"Focus on";
-    NSLog(@"Original TitleLabel Frame: %f, %f, %f, %f", self.titleLabel.frame.origin.x, self.titleLabel.frame.origin.y, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
     
     // Hide addEventButton
     self.addEventButton.hidden = YES;
@@ -227,8 +242,6 @@
                                  290,
                                  self.currentEventTitleLabel.frame.size.height);
     self.currentEventTitleLabel.frame = newFrame;
-    
-    NSLog(@"Loaded Current event Frame: %f, %f, %f, %f", self.currentEventTitleLabel.frame.origin.x, self.currentEventTitleLabel.frame.origin.y, self.currentEventTitleLabel.frame.size.width, self.currentEventTitleLabel.frame.size.height);
     
     // Show timerLabel (according to currentEventTitleLabel's bound)
     CGRect labelFrame = self.currentEventTitleLabel.frame;
@@ -292,8 +305,9 @@
     // Hide currentEventField, resign first responder and clear content
     [self.eventTitleField resignFirstResponder];
     self.eventTitleField.hidden = YES;
-    self.eventTitleField.placeholder = @"";
+    self.eventTitleField.placeholder = nil;
     self.eventTitleField.text = @"";
+    self.eventTitleField.textAlignment = NSTextAlignmentCenter;
     
     // Hide typeSelector and RESET
     self.typeSelector.hidden = YES;
@@ -315,9 +329,7 @@
                          self.titleLabel.textColor = [SPTColor labelColorLight];
                          self.titleLabel.text = @"Focus on";
                      }
-                     completion:^(BOOL finished){
-                         NSLog(@"Animated TitleLabel Frame: %f, %f, %f, %f", self.titleLabel.frame.origin.x, self.titleLabel.frame.origin.y, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
-                     }];
+                     completion:NULL];
     
     // Show currentEventTitleLabel and resolve sizeToFit issue
     self.currentEventTitleLabel.textAlignment = NSTextAlignmentCenter;

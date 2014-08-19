@@ -8,6 +8,7 @@
 
 #import "TESTQueryDateViewController.h"
 #import "TESTEventsInDayTableViewController.h"
+#import "TESTPieChartViewController.h"
 
 @interface TESTQueryDateViewController ()
 
@@ -46,6 +47,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ShowEventsInDay"]) {
+        
         TESTEventsInDayTableViewController *tableViewController = (TESTEventsInDayTableViewController *)[segue destinationViewController];
         
         NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -55,6 +57,19 @@
         NSDate *destDate = [[NSCalendar currentCalendar] dateFromComponents:components];
         
         tableViewController.date = destDate;
+        
+    } else if ([segue.identifier isEqualToString:@"ShowPieChartOfDay"]) {
+        
+        TESTPieChartViewController *pieChartViewController = (TESTPieChartViewController *)[segue destinationViewController];
+        
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        [components setYear:[self.yearLabel.text integerValue]];
+        [components setMonth:[self.monthLabel.text integerValue]];
+        [components setDay:[self.dayLabel.text integerValue]];
+        NSDate *destDate = [[NSCalendar currentCalendar] dateFromComponents:components];
+        
+        pieChartViewController.date = destDate;
+        
     }
 }
 

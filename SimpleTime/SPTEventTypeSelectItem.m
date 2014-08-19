@@ -26,7 +26,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.type = type;
-        self.selected = selected;
+        self.isSelected = selected;
         selected ? [self selectItem] : [self resetItem];
     }
     return self;
@@ -39,7 +39,7 @@
         self.image = image;
         self.pressedImage = pressedImage;
         self.selectedImage = selectedImage;
-        self.selected = selected;
+        self.isSelected = selected;
         selected ? [self selectItem] : [self resetItem];
     }
     return self;
@@ -61,7 +61,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (!self.selected) {
+    if (!self.isSelected) {
         self.layer.contents = (id)self.pressedImage.CGImage;
         [self setNeedsDisplay];
     }

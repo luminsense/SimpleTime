@@ -186,7 +186,7 @@
     // Set sort descriptor and predicate
     NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"beginDate" ascending:YES];
     request.sortDescriptors = @[sd];
-    request.predicate = [NSPredicate predicateWithFormat:@"((beginDate > %@ AND beginDate < %@) OR (endDate > %@ AND endDate < %@)) AND isFinished == YES", startOfDay, endOfDay, startOfDay, endOfDay];
+    request.predicate = [NSPredicate predicateWithFormat:@"((beginDate > %@ AND beginDate < %@) OR (endDate > %@ AND endDate < %@) OR (beginDate < %@ AND endDate > %@)) AND isFinished == YES", startOfDay, endOfDay, startOfDay, endOfDay, startOfDay, endOfDay];
     
     // Excute fetch request
     NSError *error;

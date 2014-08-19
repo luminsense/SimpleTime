@@ -15,6 +15,8 @@
 		20225A7319A1ABC400E5A9CE /* eventTypeNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7019A1ABC400E5A9CE /* eventTypeNone.png */; };
 		20225A7419A1ABC400E5A9CE /* eventTypeNonePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7119A1ABC400E5A9CE /* eventTypeNonePressed.png */; };
 		20225A7519A1ABC400E5A9CE /* eventTypeNoneSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7219A1ABC400E5A9CE /* eventTypeNoneSelected.png */; };
+		203B6E7B19A2FDEA000EBB99 /* TESTPieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B6E7A19A2FDEA000EBB99 /* TESTPieChartViewController.m */; };
+		2050CF7D19A39626005303E2 /* VWWWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2050CF7C19A39626005303E2 /* VWWWaterView.m */; };
 		20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D2A199B93D8002633CC /* TESTMainViewController.m */; };
 		20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D2D199B93F1002633CC /* TESTAllEventsTableViewController.m */; };
 		20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20557D30199B940B002633CC /* TESTNewEventViewController.m */; };
@@ -42,6 +44,7 @@
 		20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */; };
 		20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8046A199BE9A9005DCCCB /* SPTEvent.m */; };
 		20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D3CBFD19A240290050FF7E /* SPTColor.m */; };
+		FC81C9CC562D42E5980E95F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AAC0C2F1A04D0AB3E71B6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,10 @@
 		20225A7019A1ABC400E5A9CE /* eventTypeNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNone.png; path = eventTypeImages/eventTypeNone.png; sourceTree = "<group>"; };
 		20225A7119A1ABC400E5A9CE /* eventTypeNonePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNonePressed.png; path = eventTypeImages/eventTypeNonePressed.png; sourceTree = "<group>"; };
 		20225A7219A1ABC400E5A9CE /* eventTypeNoneSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNoneSelected.png; path = eventTypeImages/eventTypeNoneSelected.png; sourceTree = "<group>"; };
+		203B6E7919A2FDEA000EBB99 /* TESTPieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTPieChartViewController.h; path = DataTesting/TESTPieChartViewController.h; sourceTree = "<group>"; };
+		203B6E7A19A2FDEA000EBB99 /* TESTPieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTPieChartViewController.m; path = DataTesting/TESTPieChartViewController.m; sourceTree = "<group>"; };
+		2050CF7B19A39626005303E2 /* VWWWaterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaterView.h; sourceTree = "<group>"; };
+		2050CF7C19A39626005303E2 /* VWWWaterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaterView.m; sourceTree = "<group>"; };
 		20557D29199B93D8002633CC /* TESTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTMainViewController.h; path = DataTesting/TESTMainViewController.h; sourceTree = "<group>"; };
 		20557D2A199B93D8002633CC /* TESTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TESTMainViewController.m; path = DataTesting/TESTMainViewController.m; sourceTree = "<group>"; };
 		20557D2C199B93F0002633CC /* TESTAllEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TESTAllEventsTableViewController.h; path = DataTesting/TESTAllEventsTableViewController.h; sourceTree = "<group>"; };
@@ -106,6 +113,8 @@
 		20C8046A199BE9A9005DCCCB /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
 		20D3CBFC19A240290050FF7E /* SPTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTColor.h; path = SimpleTime/SPTColor.h; sourceTree = "<group>"; };
 		20D3CBFD19A240290050FF7E /* SPTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTColor.m; path = SimpleTime/SPTColor.m; sourceTree = "<group>"; };
+		2D920D81306243D0894BABC0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		68AAC0C2F1A04D0AB3E71B6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,7 @@
 				20A23A4C199924F700E4C577 /* CoreGraphics.framework in Frameworks */,
 				20A23A4E199924F700E4C577 /* UIKit.framework in Frameworks */,
 				20A23A4A199924F700E4C577 /* Foundation.framework in Frameworks */,
+				FC81C9CC562D42E5980E95F9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +188,7 @@
 		209367A719A0D84A00CCFBAC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				20EFDC2419A3A2E900383D30 /* Water View */,
 				2093678D19A08ED400CCFBAC /* Event Type Selector Control */,
 				20D3CBFC19A240290050FF7E /* SPTColor.h */,
 				20D3CBFD19A240290050FF7E /* SPTColor.m */,
@@ -200,6 +211,7 @@
 				20A23A68199924F700E4C577 /* SimpleTimeTests */,
 				20A23A48199924F700E4C577 /* Frameworks */,
 				20A23A47199924F700E4C577 /* Products */,
+				2D920D81306243D0894BABC0 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +231,7 @@
 				20A23A4B199924F700E4C577 /* CoreGraphics.framework */,
 				20A23A4D199924F700E4C577 /* UIKit.framework */,
 				20A23A62199924F700E4C577 /* XCTest.framework */,
+				68AAC0C2F1A04D0AB3E71B6B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +290,8 @@
 				20C8045E199BDA4F005DCCCB /* TESTQueryDateViewController.m */,
 				20C80460199BDA6D005DCCCB /* TESTEventsInDayTableViewController.h */,
 				20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */,
+				203B6E7919A2FDEA000EBB99 /* TESTPieChartViewController.h */,
+				203B6E7A19A2FDEA000EBB99 /* TESTPieChartViewController.m */,
 			);
 			name = "Controller for Data Testing";
 			sourceTree = "<group>";
@@ -293,6 +308,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		20EFDC2419A3A2E900383D30 /* Water View */ = {
+			isa = PBXGroup;
+			children = (
+				2050CF7B19A39626005303E2 /* VWWWaterView.h */,
+				2050CF7C19A39626005303E2 /* VWWWaterView.m */,
+			);
+			name = "Water View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,9 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTime" */;
 			buildPhases = (
+				F67F2DDDEA5345F382A35983 /* Check Pods Manifest.lock */,
 				20A23A42199924F700E4C577 /* Sources */,
 				20A23A43199924F700E4C577 /* Frameworks */,
 				20A23A44199924F700E4C577 /* Resources */,
+				4856A4866F594CFE9A95224D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -394,6 +420,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4856A4866F594CFE9A95224D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F67F2DDDEA5345F382A35983 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		20A23A42199924F700E4C577 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -405,6 +464,7 @@
 				20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */,
 				20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */,
 				2082584A199DE9B4005044A0 /* MZTimerLabel.m in Sources */,
+				203B6E7B19A2FDEA000EBB99 /* TESTPieChartViewController.m in Sources */,
 				20C8045F199BDA4F005DCCCB /* TESTQueryDateViewController.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
 				20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */,
@@ -413,6 +473,7 @@
 				20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */,
 				2093679019A0909700CCFBAC /* SPTEventTypeSelectItem.m in Sources */,
 				20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */,
+				2050CF7D19A39626005303E2 /* VWWWaterView.m in Sources */,
 				20A23A56199924F700E4C577 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +588,7 @@
 		};
 		20A23A73199924F700E4C577 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D920D81306243D0894BABC0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -542,6 +604,7 @@
 		};
 		20A23A74199924F700E4C577 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D920D81306243D0894BABC0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

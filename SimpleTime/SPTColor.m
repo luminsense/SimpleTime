@@ -22,7 +22,12 @@
 
 + (UIColor *)mainColor
 {
-    return [UIColor greenColor];
+    return [UIColor colorWithRed:64/255 green:220/255 blue:82/255 alpha:1];
+}
+
++ (UIColor *)pieChartBackgroundColor
+{
+    return [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
 }
 
 + (UIColor *)colorForEventType:(SPTEventType)type
@@ -58,7 +63,7 @@
             color = [UIColor yellowColor];
             break;
         case SPTEventTypeHome:
-            color = [UIColor lightGrayColor];
+            color = [UIColor darkGrayColor];
             break;
         default:
             color = [UIColor clearColor];

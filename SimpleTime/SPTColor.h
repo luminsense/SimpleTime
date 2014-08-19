@@ -15,6 +15,7 @@
 + (UIColor *)labelColorLight;
 + (UIColor *)labelColorDark;
 + (UIColor *)mainColor;
++ (UIColor *)pieChartBackgroundColor;
 
 + (UIColor *)colorForEventType:(SPTEventType)type;
 

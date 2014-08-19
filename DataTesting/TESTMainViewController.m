@@ -11,6 +11,7 @@
 #import "MZTimerLabel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SPTEventTypeSelectView.h"
+#import "VWWWaterView.h"
 
 @interface TESTMainViewController () <UITextFieldDelegate, SPTEventTypeSelectViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *currentEventTitleField;
@@ -65,11 +66,13 @@
     }
     
     // Type selector testing
+    /*
     SPTEventTypeSelectView *selector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake([SPTEventTypeSelectView marginLeft], 240, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
     selector.delegate = self;
     [self.view addSubview:selector];
     
     self.eventTypeTestingLabel.text = [NSString stringWithFormat:@"%ld", [selector currentSelectedType]];
+     */
 }
 
 - (void)didReceiveMemoryWarning
