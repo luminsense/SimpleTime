@@ -34,8 +34,8 @@
         b = 0;
         jia = NO;
         
-        _currentWaterColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
-        _currentLinePointY = 250;
+        _currentWaterColor = [UIColor colorWithRed:219/255.0f green:238/255.0f blue:255/255.0f alpha:1];
+        _currentLinePointY = 160;
         
         [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
         
@@ -88,7 +88,7 @@
     float y=_currentLinePointY;
     CGPathMoveToPoint(path, NULL, 0, y);
     for(float x=0;x<=320;x++){
-        y= a * sin( x/180*M_PI + 4*b/M_PI ) * 5 + _currentLinePointY;
+        y= a * sin( x/180*M_PI + 4*b/M_PI ) * 8 + _currentLinePointY;
         CGPathAddLineToPoint(path, nil, x, y);
     }
     

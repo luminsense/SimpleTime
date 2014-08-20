@@ -27,7 +27,6 @@
 		2093679019A0909700CCFBAC /* SPTEventTypeSelectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2093678F19A0909700CCFBAC /* SPTEventTypeSelectItem.m */; };
 		209367A019A0ACC700CCFBAC /* SPTEventTypeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2093679F19A0ACC700CCFBAC /* SPTEventTypeSelectView.m */; };
 		209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */; };
-		209367A619A0C3CB00CCFBAC /* SPTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209367A519A0C3CB00CCFBAC /* SPTMainViewController.m */; };
 		20A23A4A199924F700E4C577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A49199924F700E4C577 /* Foundation.framework */; };
 		20A23A4C199924F700E4C577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4B199924F700E4C577 /* CoreGraphics.framework */; };
 		20A23A4E199924F700E4C577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A23A4D199924F700E4C577 /* UIKit.framework */; };
@@ -44,6 +43,12 @@
 		20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C80461199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m */; };
 		20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8046A199BE9A9005DCCCB /* SPTEvent.m */; };
 		20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D3CBFD19A240290050FF7E /* SPTColor.m */; };
+		20DDE72319A4B5C40009E2D8 /* MZDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE71E19A4B5C40009E2D8 /* MZDay.m */; };
+		20DDE72419A4B5C40009E2D8 /* MZDayPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE72019A4B5C40009E2D8 /* MZDayPicker.m */; };
+		20DDE72519A4B5C40009E2D8 /* MZDayPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE72219A4B5C40009E2D8 /* MZDayPickerCell.m */; };
+		20DDE72C19A4BE930009E2D8 /* SPTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE72B19A4BE930009E2D8 /* SPTMainViewController.m */; };
+		20DDE73019A4BF140009E2D8 /* SPTHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE72E19A4BF140009E2D8 /* SPTHistoryViewController.m */; };
+		20DDE73119A4BF140009E2D8 /* SPTHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE72F19A4BF140009E2D8 /* SPTHistoryViewController.xib */; };
 		FC81C9CC562D42E5980E95F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AAC0C2F1A04D0AB3E71B6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +92,6 @@
 		2093679E19A0ACC700CCFBAC /* SPTEventTypeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventTypeSelectView.h; path = SimpleTime/SPTEventTypeSelectView.h; sourceTree = "<group>"; };
 		2093679F19A0ACC700CCFBAC /* SPTEventTypeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventTypeSelectView.m; path = SimpleTime/SPTEventTypeSelectView.m; sourceTree = "<group>"; };
 		209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SimpleTime.storyboard; path = SimpleTime/SimpleTime.storyboard; sourceTree = "<group>"; };
-		209367A419A0C3CB00CCFBAC /* SPTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTMainViewController.h; path = SimpleTime/SPTMainViewController.h; sourceTree = "<group>"; };
-		209367A519A0C3CB00CCFBAC /* SPTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTMainViewController.m; path = SimpleTime/SPTMainViewController.m; sourceTree = "<group>"; };
 		20A23A46199924F700E4C577 /* SimpleTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A23A49199924F700E4C577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20A23A4B199924F700E4C577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,6 +116,17 @@
 		20C8046A199BE9A9005DCCCB /* SPTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEvent.m; path = SimpleTime/SPTEvent.m; sourceTree = "<group>"; };
 		20D3CBFC19A240290050FF7E /* SPTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTColor.h; path = SimpleTime/SPTColor.h; sourceTree = "<group>"; };
 		20D3CBFD19A240290050FF7E /* SPTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTColor.m; path = SimpleTime/SPTColor.m; sourceTree = "<group>"; };
+		20DDE71D19A4B5C40009E2D8 /* MZDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZDay.h; sourceTree = "<group>"; };
+		20DDE71E19A4B5C40009E2D8 /* MZDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZDay.m; sourceTree = "<group>"; };
+		20DDE71F19A4B5C40009E2D8 /* MZDayPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZDayPicker.h; sourceTree = "<group>"; };
+		20DDE72019A4B5C40009E2D8 /* MZDayPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZDayPicker.m; sourceTree = "<group>"; };
+		20DDE72119A4B5C40009E2D8 /* MZDayPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZDayPickerCell.h; sourceTree = "<group>"; };
+		20DDE72219A4B5C40009E2D8 /* MZDayPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZDayPickerCell.m; sourceTree = "<group>"; };
+		20DDE72A19A4BE930009E2D8 /* SPTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTMainViewController.h; path = SimpleTime/SPTMainViewController.h; sourceTree = "<group>"; };
+		20DDE72B19A4BE930009E2D8 /* SPTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTMainViewController.m; path = SimpleTime/SPTMainViewController.m; sourceTree = "<group>"; };
+		20DDE72D19A4BF140009E2D8 /* SPTHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTHistoryViewController.h; path = SimpleTime/SPTHistoryViewController.h; sourceTree = "<group>"; };
+		20DDE72E19A4BF140009E2D8 /* SPTHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTHistoryViewController.m; path = SimpleTime/SPTHistoryViewController.m; sourceTree = "<group>"; };
+		20DDE72F19A4BF140009E2D8 /* SPTHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SPTHistoryViewController.xib; path = SimpleTime/SPTHistoryViewController.xib; sourceTree = "<group>"; };
 		2D920D81306243D0894BABC0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		68AAC0C2F1A04D0AB3E71B6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,8 +193,11 @@
 			isa = PBXGroup;
 			children = (
 				209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */,
-				209367A419A0C3CB00CCFBAC /* SPTMainViewController.h */,
-				209367A519A0C3CB00CCFBAC /* SPTMainViewController.m */,
+				20DDE72A19A4BE930009E2D8 /* SPTMainViewController.h */,
+				20DDE72B19A4BE930009E2D8 /* SPTMainViewController.m */,
+				20DDE72F19A4BF140009E2D8 /* SPTHistoryViewController.xib */,
+				20DDE72D19A4BF140009E2D8 /* SPTHistoryViewController.h */,
+				20DDE72E19A4BF140009E2D8 /* SPTHistoryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -188,6 +205,7 @@
 		209367A719A0D84A00CCFBAC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE72619A4B5DA0009E2D8 /* MZDayPicker */,
 				20EFDC2419A3A2E900383D30 /* Water View */,
 				2093678D19A08ED400CCFBAC /* Event Type Selector Control */,
 				20D3CBFC19A240290050FF7E /* SPTColor.h */,
@@ -199,8 +217,7 @@
 		20A23A3D199924F700E4C577 = {
 			isa = PBXGroup;
 			children = (
-				20825848199DE9B4005044A0 /* MZTimerLabel.h */,
-				20825849199DE9B4005044A0 /* MZTimerLabel.m */,
+				20DDE72719A4B5E30009E2D8 /* MZTimerLabel */,
 				20225A6F19A1ABAF00E5A9CE /* Images */,
 				2093679A19A0A39700CCFBAC /* Event Type Images */,
 				20E3C2D6199928250060AF41 /* Model */,
@@ -274,6 +291,28 @@
 				20A23A6B199924F700E4C577 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20DDE72619A4B5DA0009E2D8 /* MZDayPicker */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE71D19A4B5C40009E2D8 /* MZDay.h */,
+				20DDE71E19A4B5C40009E2D8 /* MZDay.m */,
+				20DDE71F19A4B5C40009E2D8 /* MZDayPicker.h */,
+				20DDE72019A4B5C40009E2D8 /* MZDayPicker.m */,
+				20DDE72119A4B5C40009E2D8 /* MZDayPickerCell.h */,
+				20DDE72219A4B5C40009E2D8 /* MZDayPickerCell.m */,
+			);
+			name = MZDayPicker;
+			sourceTree = "<group>";
+		};
+		20DDE72719A4B5E30009E2D8 /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				20825848199DE9B4005044A0 /* MZTimerLabel.h */,
+				20825849199DE9B4005044A0 /* MZTimerLabel.m */,
+			);
+			name = MZTimerLabel;
 			sourceTree = "<group>";
 		};
 		20E3C2C6199926CF0060AF41 /* Controller for Data Testing */ = {
@@ -395,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE73119A4BF140009E2D8 /* SPTHistoryViewController.xib in Resources */,
 				20225A6B19A1ABAB00E5A9CE /* currentEventFinishButton.png in Resources */,
 				209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */,
 				20225A6C19A1ABAB00E5A9CE /* myRecordButton.png in Resources */,
@@ -460,17 +500,21 @@
 			files = (
 				206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */,
 				209367A019A0ACC700CCFBAC /* SPTEventTypeSelectView.m in Sources */,
+				20DDE72C19A4BE930009E2D8 /* SPTMainViewController.m in Sources */,
 				206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */,
+				20DDE72419A4B5C40009E2D8 /* MZDayPicker.m in Sources */,
 				20557D31199B940B002633CC /* TESTNewEventViewController.m in Sources */,
 				20557D2E199B93F1002633CC /* TESTAllEventsTableViewController.m in Sources */,
+				20DDE72519A4B5C40009E2D8 /* MZDayPickerCell.m in Sources */,
 				2082584A199DE9B4005044A0 /* MZTimerLabel.m in Sources */,
 				203B6E7B19A2FDEA000EBB99 /* TESTPieChartViewController.m in Sources */,
 				20C8045F199BDA4F005DCCCB /* TESTQueryDateViewController.m in Sources */,
+				20DDE73019A4BF140009E2D8 /* SPTHistoryViewController.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
 				20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */,
 				20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */,
-				209367A619A0C3CB00CCFBAC /* SPTMainViewController.m in Sources */,
 				20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */,
+				20DDE72319A4B5C40009E2D8 /* MZDay.m in Sources */,
 				2093679019A0909700CCFBAC /* SPTEventTypeSelectItem.m in Sources */,
 				20C8046B199BE9A9005DCCCB /* SPTEvent.m in Sources */,
 				2050CF7D19A39626005303E2 /* VWWWaterView.m in Sources */,

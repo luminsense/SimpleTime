@@ -22,7 +22,7 @@
 
 + (UIColor *)mainColor
 {
-    return [UIColor colorWithRed:64/255 green:220/255 blue:82/255 alpha:1];
+    return [UIColor colorWithRed:64.0/255.0 green:220.0/255.0 blue:82.0/255.0 alpha:1];
 }
 
 + (UIColor *)pieChartBackgroundColor

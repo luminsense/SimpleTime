@@ -182,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleTime/SPTMainViewController.m"
-            timestampString = "430151320.14349"
+            timestampString = "430227518.62604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "cancelButton"
             landmarkType = "19">
          </BreakpointContent>

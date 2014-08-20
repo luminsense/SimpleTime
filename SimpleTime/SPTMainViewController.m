@@ -12,6 +12,7 @@
 #import "SPTColor.h"
 #import "SPTEventStore.h"
 #import "VWWWaterView.h"
+#import "SPTHistoryViewController.h"
 
 @interface SPTMainViewController () <SPTEventTypeSelectViewDelegate, UITextFieldDelegate>
 
@@ -101,22 +102,12 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
-    // Reset color
-    self.titleLabel.textColor = [SPTColor labelColorDark];
-    self.myRecordButton.titleLabel.textColor = [SPTColor labelColorLight];
-    self.currentEventTitleLabel.textColor = [SPTColor labelColorDark];
-    self.currentEventFinishButton.titleLabel.textColor = [SPTColor mainColor];
-    // [[self.eventTitleField valueForKey:@"textInputTraits"] setValue:[UIColor clearColor] forKey:@"insertionPointColor"];
 
-    
     if ([[SPTEventStore sharedStore] hasCurrentEvent]) {
         [self loadWithCurrentEvent];
     } else {
         [self loadWithoutCurrentEvent];
     }
-    
-    NSLog(@"View Did Layour Subviews");
 }
 
 - (void)didReceiveMemoryWarning
@@ -165,6 +156,14 @@
     [self quitCurrentEventStatus];
     [self transitionToNoEventStatus];
 }
+
+- (IBAction)showHistory:(id)sender
+{
+    SPTHistoryViewController *history = [[SPTHistoryViewController alloc] init];
+    //UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:history];
+    [self presentViewController:history animated:YES completion:NULL];
+}
+
 
 - (void)valueDidChangeInTypeSelectView:(SPTEventTypeSelectView *)selector
 {
