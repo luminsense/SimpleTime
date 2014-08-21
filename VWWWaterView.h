@@ -11,5 +11,11 @@
 @interface VWWWaterView : UIView
 
 @property (nonatomic) float currentLinePointY;
+@property (nonatomic) float offset;
+@property (nonatomic) NSTimeInterval interval;
+@property (nonatomic) float speed;
+@property (nonatomic) float height;
+@property (nonatomic) float speedVarity;
 
+- (instancetype)initWithFrame:(CGRect)frame waterColor:(UIColor *)color;
 @end

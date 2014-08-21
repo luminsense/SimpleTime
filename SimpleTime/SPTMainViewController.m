@@ -16,7 +16,8 @@
 
 @interface SPTMainViewController () <SPTEventTypeSelectViewDelegate, UITextFieldDelegate>
 
-@property (strong, nonatomic) VWWWaterView *waterView;
+@property (strong, nonatomic) VWWWaterView *topWaterView;
+@property (strong, nonatomic) VWWWaterView *backWaterView;
 
 // Components in No Event Status
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -54,8 +55,18 @@
     self.eventTitleField.delegate = self;
     
     // Load water effect
-    self.waterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.waterView];
+    self.topWaterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds waterColor:[UIColor colorWithRed:.92 green:.92 blue:.92 alpha:1]];
+    self.topWaterView.speedVarity = 0.07;
+    self.topWaterView.offset = 0;
+    self.topWaterView.height = 8;
+    [self.view addSubview:self.topWaterView];
+    
+    self.backWaterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds waterColor:[SPTColor waterColor]];
+    self.backWaterView.speed = 3;
+    self.backWaterView.speedVarity = 0.12;
+    self.backWaterView.offset = 10;
+    self.backWaterView.height = 4;
+    [self.view addSubview:self.backWaterView];
     
     // Load type selector
     self.typeSelector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake(15, 128, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
@@ -95,8 +106,8 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    [self.view sendSubviewToBack:self.waterView];
-    
+    [self.view sendSubviewToBack:self.topWaterView];
+    [self.view sendSubviewToBack:self.backWaterView];
 }
 
 - (void)viewDidLayoutSubviews

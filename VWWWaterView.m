@@ -23,7 +23,7 @@
 @implementation VWWWaterView
 
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame waterColor:(UIColor *)color
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -31,14 +31,18 @@
         [self setBackgroundColor:[UIColor clearColor]];
         
         a = 1.5;
-        b = 0;
+        b = 1;
         jia = NO;
+        _offset = 0;
+        _interval = 0.02;
+        _speed = 4;
+        _height = 8;
+        _speedVarity = 0.1;
         
-        _currentWaterColor = [UIColor colorWithRed:219/255.0f green:238/255.0f blue:255/255.0f alpha:1];
+        _currentWaterColor = color;
         _currentLinePointY = 160;
         
-        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
-        
+        [NSTimer scheduledTimerWithTimeInterval:self.interval target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
     }
     return self;
 }
@@ -67,7 +71,7 @@
     }
     
     
-    b+=0.1;
+    b += self.speedVarity;
     
     [self setNeedsDisplay];
 }
@@ -87,8 +91,9 @@
     
     float y=_currentLinePointY;
     CGPathMoveToPoint(path, NULL, 0, y);
-    for(float x=0;x<=320;x++){
-        y= a * sin( x/180*M_PI + 4*b/M_PI ) * 8 + _currentLinePointY;
+    float screenWidth = [UIScreen mainScreen].bounds.size.width;
+    for(float x=0; x<=screenWidth; x++){
+        y= a * sin( x / 180 * M_PI + self.speed * b /M_PI + self.offset) * self.height + _currentLinePointY;
         CGPathAddLineToPoint(path, nil, x, y);
     }
     
@@ -98,6 +103,7 @@
     
     CGContextAddPath(context, path);
     CGContextFillPath(context);
+    
     CGContextDrawPath(context, kCGPathStroke);
     CGPathRelease(path);
 }

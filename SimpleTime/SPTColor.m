@@ -30,6 +30,26 @@
     return [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
 }
 
++ (UIColor *)waterColor
+{
+    return [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+}
+
++ (UIColor *)dayPickerActiveDayColor
+{
+    return [UIColor blackColor];
+}
+
++ (UIColor *)dayPickerActiveDayNameColor
+{
+    return [UIColor lightGrayColor];
+}
+
++ (UIColor *)dayPickerInactiveDayColor
+{
+    return [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
+}
+
 + (UIColor *)colorForEventType:(SPTEventType)type
 {
     UIColor *color;

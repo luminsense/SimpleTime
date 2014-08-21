@@ -31,7 +31,7 @@ CGFloat const kDefaultDayLabelFontSize = 25.0f;
 CGFloat const kDefaultDayNameLabelFontSize = 11.0f;
 
 CGFloat const kDefaultCellHeight = 64.0f;
-CGFloat const kDefaultCellWidth = 64.0f;
+CGFloat const kDefaultCellWidth = 45.0f;
 CGFloat const kDefaultCellFooterHeight = 2.0f;
 
 CGFloat const kDefaultDayLabelMaxZoomValue = 12.0f;
@@ -172,7 +172,7 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
 - (void)setCurrentDate:(NSDate *)date animated:(BOOL)animated
 {
     if (date) {
-        NSInteger components = (NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit);
+        NSInteger components = (NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear);
         
         NSCalendar *currentCalendar = [NSCalendar currentCalendar];
         NSDateComponents *componentsFromDate = [currentCalendar components:components
@@ -303,7 +303,7 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
     if (self = [super initWithCoder:aDecoder]) {
 
         self =  [self initWithFrame:CGRectMake(0, 0, self.initialFrame.size.width, self.initialFrame.size.height)
-                        dayCellSize:CGSizeMake(self.initialFrame.size.height-kDefaultCellFooterHeight, self.initialFrame.size.height-kDefaultCellFooterHeight)
+                        dayCellSize:CGSizeMake(kDefaultCellWidth, self.initialFrame.size.height-kDefaultCellFooterHeight)
                 dayCellFooterHeight:kDefaultCellFooterHeight
                               month:1
                                year:1970];
@@ -337,7 +337,7 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
 
 - (instancetype)initWithFrame:(CGRect)frame dayCellSize:(CGSize)cellSize dayCellFooterHeight:(CGFloat)footerHeight month:(NSInteger)month year:(NSInteger)year
 {
-    NSLog(@"%ld, %ld", (long)month, (long)year);
+    NSLog(@"init 3");
     _dayCellSize = cellSize;
     _dayCellFooterHeight = footerHeight;
     
@@ -654,7 +654,7 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    // [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     
     [components setDay:day];
     
@@ -675,20 +675,24 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
 
 + (NSDate *)dateWithNoTime:(NSDate *)dateTime middleDay:(BOOL)middle
 {
+    NSDateComponents *comp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth fromDate:dateTime];
+    
     if( dateTime == nil ) {
         dateTime = [NSDate date];
     }
     
-    NSCalendar       *calendar   = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    NSCalendar       *calendar   = [NSCalendar currentCalendar];
+    // [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+    components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                              fromDate:dateTime];
     
     NSDate *dateOnly = [calendar dateFromComponents:components];
     
     if (middle)
-       dateOnly = [dateOnly dateByAddingTimeInterval:(60.0 * 60.0 * 12.0)];           // Push to Middle of day. 
+       dateOnly = [dateOnly dateByAddingTimeInterval:(60.0 * 60.0 * 12.0)];           // Push to Middle of day.
+    
+    comp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth fromDate:dateOnly];
 
     return dateOnly;
 }
@@ -696,8 +700,8 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
 - (NSUInteger)numberOfDaysInMonth
 {
     NSCalendar *c = [NSCalendar currentCalendar];
-    NSRange days = [c rangeOfUnit:NSDayCalendarUnit
-                           inUnit:NSMonthCalendarUnit
+    NSRange days = [c rangeOfUnit:NSCalendarUnitDay
+                           inUnit:NSCalendarUnitMonth
                           forDate:self];
     
     return days.length;

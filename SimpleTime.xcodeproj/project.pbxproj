@@ -24,6 +24,8 @@
 		206FA680199A59E1003E25B3 /* SimpleTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 206FA67E199A59E1003E25B3 /* SimpleTime.xcdatamodeld */; };
 		206FA686199A8096003E25B3 /* SPTEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FA685199A8096003E25B3 /* SPTEventStore.m */; };
 		2082584A199DE9B4005044A0 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20825849199DE9B4005044A0 /* MZTimerLabel.m */; };
+		2088FD5119A60CB40065F7CD /* SPTEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2088FD4F19A60CB40065F7CD /* SPTEventCell.m */; };
+		2088FD5219A60CB40065F7CD /* SPTEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2088FD5019A60CB40065F7CD /* SPTEventCell.xib */; };
 		2093679019A0909700CCFBAC /* SPTEventTypeSelectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2093678F19A0909700CCFBAC /* SPTEventTypeSelectItem.m */; };
 		209367A019A0ACC700CCFBAC /* SPTEventTypeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2093679F19A0ACC700CCFBAC /* SPTEventTypeSelectView.m */; };
 		209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */; };
@@ -87,6 +89,9 @@
 		206FA685199A8096003E25B3 /* SPTEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventStore.m; path = SimpleTime/SPTEventStore.m; sourceTree = "<group>"; };
 		20825848199DE9B4005044A0 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		20825849199DE9B4005044A0 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		2088FD4E19A60CB40065F7CD /* SPTEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventCell.h; path = SimpleTime/SPTEventCell.h; sourceTree = "<group>"; };
+		2088FD4F19A60CB40065F7CD /* SPTEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventCell.m; path = SimpleTime/SPTEventCell.m; sourceTree = "<group>"; };
+		2088FD5019A60CB40065F7CD /* SPTEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SPTEventCell.xib; path = SimpleTime/SPTEventCell.xib; sourceTree = "<group>"; };
 		2093678E19A0909700CCFBAC /* SPTEventTypeSelectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventTypeSelectItem.h; path = SimpleTime/SPTEventTypeSelectItem.h; sourceTree = "<group>"; };
 		2093678F19A0909700CCFBAC /* SPTEventTypeSelectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventTypeSelectItem.m; path = SimpleTime/SPTEventTypeSelectItem.m; sourceTree = "<group>"; };
 		2093679E19A0ACC700CCFBAC /* SPTEventTypeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventTypeSelectView.h; path = SimpleTime/SPTEventTypeSelectView.h; sourceTree = "<group>"; };
@@ -168,6 +173,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		2088FD5319A60CB80065F7CD /* Event Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2088FD4E19A60CB40065F7CD /* SPTEventCell.h */,
+				2088FD4F19A60CB40065F7CD /* SPTEventCell.m */,
+				2088FD5019A60CB40065F7CD /* SPTEventCell.xib */,
+			);
+			name = "Event Cell";
+			sourceTree = "<group>";
+		};
 		2093678D19A08ED400CCFBAC /* Event Type Selector Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +223,7 @@
 				20DDE72619A4B5DA0009E2D8 /* MZDayPicker */,
 				20EFDC2419A3A2E900383D30 /* Water View */,
 				2093678D19A08ED400CCFBAC /* Event Type Selector Control */,
+				2088FD5319A60CB80065F7CD /* Event Cell */,
 				20D3CBFC19A240290050FF7E /* SPTColor.h */,
 				20D3CBFD19A240290050FF7E /* SPTColor.m */,
 			);
@@ -434,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2088FD5219A60CB40065F7CD /* SPTEventCell.xib in Resources */,
 				20DDE73119A4BF140009E2D8 /* SPTHistoryViewController.xib in Resources */,
 				20225A6B19A1ABAB00E5A9CE /* currentEventFinishButton.png in Resources */,
 				209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */,
@@ -512,6 +529,7 @@
 				20DDE73019A4BF140009E2D8 /* SPTHistoryViewController.m in Sources */,
 				20A23A5A199924F700E4C577 /* SPTAppDelegate.m in Sources */,
 				20D3CBFE19A240290050FF7E /* SPTColor.m in Sources */,
+				2088FD5119A60CB40065F7CD /* SPTEventCell.m in Sources */,
 				20C80462199BDA6D005DCCCB /* TESTEventsInDayTableViewController.m in Sources */,
 				20557D2B199B93D8002633CC /* TESTMainViewController.m in Sources */,
 				20DDE72319A4B5C40009E2D8 /* MZDay.m in Sources */,

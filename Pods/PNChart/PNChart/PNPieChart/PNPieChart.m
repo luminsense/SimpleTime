@@ -131,7 +131,7 @@
     CGPoint center = CGPointMake(_outterCircleRadius + distance * sin(rad),
                                  _outterCircleRadius - distance * cos(rad));
     
-    CGRect frame;
+    CGRect frame = CGRectMake(0, 0, 100, 80);
     frame.size = CGSizeMake(100, 80);
     
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:frame];

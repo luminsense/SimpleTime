@@ -11,6 +11,7 @@
 #import "SPTEventStore.h"
 #import "PNChart.h"
 #import "SPTColor.h"
+#import "SPTEventCell.h"
 
 @interface SPTHistoryViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet MZDayPicker *dayPicker;
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) NSDateFormatter *monthFormatter;
 @property (nonatomic, strong) NSDate *currentDate;
 @property (nonatomic, strong) NSArray *events;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
 
 @end
 
@@ -41,6 +43,9 @@
     [super viewDidLoad];
     self.currentDate = [NSDate date];
     self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
+    
+    NSDateComponents *comp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth fromDate:self.currentDate];
+    NSLog(@"Self.CurrentDate: %ld, %ld", comp.day, comp.month);
     
     self.weekdayFormatter = [[NSDateFormatter alloc] init];
     [self.weekdayFormatter setDateFormat:@"EEE"];
@@ -88,23 +93,45 @@
     self.tableView = [[UITableView alloc] initWithFrame:tableViewFrame];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.allowsSelection = NO;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 75, 0, 0);
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:self.tableView];
     
+    // Register cell for table view
+    UINib *nib = [UINib nibWithNibName:@"SPTEventCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"SPTEventCell"];
+    
     // Load header view of table view
-    CGRect headerFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300);
+    CGRect headerFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 280);
     UIView *header = [[UIView alloc] initWithFrame:headerFrame];
     header.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = header;
     
     // Load pie chart
     NSArray *items = [self getDataItemsFromEvents:self.events inDate:self.currentDate];
-    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, 40.0, 240.0, 240.0) items:items];
+    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(50.0, 30.0, 220.0, 220.0) items:items];
     self.pieChart.descriptionTextColor = [UIColor clearColor];
     self.pieChart.descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:14.0];
     self.pieChart.descriptionTextShadowColor = [UIColor clearColor];
     self.pieChart.duration = 0.5;
     [self.tableView.tableHeaderView addSubview:self.pieChart];
+    
+    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, 279.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
+    separator.backgroundColor = [UIColor lightGrayColor];
+    [self.tableView.tableHeaderView addSubview:separator];
+    
+    // Load swipe recognizer
+    self.swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedInTableView:)];
+    self.swipeRecognizer.numberOfTouchesRequired = 1;
+    //self.swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionLeft;
+    [self.tableView addGestureRecognizer:self.swipeRecognizer];
+    
+    /*
+    UIView *dayPickerSeparator = [[UIView alloc] initWithFrame:CGRectMake(0, self.dayPicker.frame.origin.y + self.dayPicker.frame.size.height - 2, [UIScreen mainScreen].bounds.size.width, 0.5)];
+    dayPickerSeparator.backgroundColor = [SPTColor mainColor];
+    [self.view addSubview:dayPickerSeparator];
+     */
     
 }
 
@@ -125,7 +152,7 @@
 
 - (void)dayPicker:(MZDayPicker *)dayPicker didSelectDay:(MZDay *)day
 {
-    NSLog(@"Picker did select day");
+    // NSLog(@"Picker did select day");
     self.currentDate = day.date;
     self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
     [self updateTitleLabel];
@@ -160,8 +187,17 @@
 {
     NSArray *items = [self getDataItemsFromEvents:self.events inDate:self.currentDate];
     [self.pieChart setValue:items forKey:@"items"];
-    NSLog(@"Items Count: %ld", items.count);
+    // NSLog(@"Items Count: %ld", items.count);
     [self.pieChart strokeChart];
+}
+
+- (void)swipedInTableView:(UISwipeGestureRecognizer *)gr
+{
+    if (gr.direction == UISwipeGestureRecognizerDirectionRight) {
+        NSLog(@">>>>>>Right");
+    } else if (gr.direction == UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@">>>>>>Left");
+    }
 }
 
 #pragma mark - Table View Data Source and Delegate
@@ -176,12 +212,48 @@
     return self.events.count;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70.0;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    SPTEventCell *cell = (SPTEventCell *)[tableView dequeueReusableCellWithIdentifier:@"SPTEventCell" forIndexPath:indexPath];
     SPTEvent *thisEvent = (SPTEvent *)self.events[indexPath.row];
-    cell.textLabel.text = thisEvent.title;
+    
+    cell.eventTitleLabel.text = thisEvent.title;
+    cell.eventTypeImageView.image = [self eventImageForType:thisEvent.eventTypeRaw];
+    
+    // Configure duration
+    NSDateComponents *diff = [[NSCalendar currentCalendar] components:NSCalendarUnitHour|NSCalendarUnitMinute
+                                                             fromDate:thisEvent.beginDate
+                                                               toDate:thisEvent.endDate
+                                                              options:0];
+    NSString *durationText;
+    if (diff.hour == 0) {
+        durationText = [NSString stringWithFormat:@"%ld min", diff.minute];
+    } else {
+        durationText = [NSString stringWithFormat:@"%ld hrs %ld min", diff.hour, diff.minute];
+    }
+    cell.eventDurationLabel.text = durationText;
+    
+    // Configure begin and end time
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm"];
+    
+    cell.eventBeginTimeLabel.text = [formatter stringFromDate:thisEvent.beginDate];
+    cell.eventEndTimeLabel.text = [formatter stringFromDate:thisEvent.endDate];
+    
+    
     return cell;
+}
+
+- (UIImage *)eventImageForType:(SPTEventType)type
+{
+    return [UIImage imageNamed:@"eventTypeNone.png"];
 }
 
 #pragma mark - Get pie chart items from events
@@ -190,10 +262,10 @@
 {
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
-    NSLog(@"Events Count: %lu", (unsigned long)events.count);
+    // NSLog(@">>>> Events Count: %lu", (unsigned long)events.count);
     
     if (events.count == 0) {
-        [items addObject:[PNPieChartDataItem dataItemWithValue:1 color:[SPTColor pieChartBackgroundColor]]];
+        [items addObject:[PNPieChartDataItem dataItemWithValue:10 color:[SPTColor pieChartBackgroundColor] description:@"Test"]];
         return items;
     }
     
@@ -222,8 +294,16 @@
         NSTimeInterval eventBeginSec = [event.beginDate timeIntervalSinceDate:startOfDay];
         NSTimeInterval eventEndSec = [event.endDate timeIntervalSinceDate:startOfDay];
         
+        // For test
+        /*
+        NSDateComponents *comp = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:event.beginDate];
+        NSLog(@"BeginTime: %ld %ld %ld %ld:%ld:%ld", comp.year, comp.month, comp.day, comp.hour, comp.minute, comp.second);
+        comp = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:startOfDay];
+        NSLog(@"Start Of Day: %ld %ld %ld %ld:%ld:%ld", comp.year, comp.month, comp.day, comp.hour, comp.minute, comp.second);
+         */
+        
         if (i == 0) {
-            if (event.beginDate < startOfDay) {
+            if ([event.beginDate compare:startOfDay] == NSOrderedAscending) {
                 eventBeginSec = 0;
             } else {
                 // Add an empty duration from 00:00:00 to beginDate
@@ -257,6 +337,8 @@
         }
         
     }
+    
+    // NSLog(@">>>> Items Count: %lu", (unsigned long)items.count);
     
     return items;
 }

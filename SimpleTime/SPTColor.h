@@ -15,7 +15,14 @@
 + (UIColor *)labelColorLight;
 + (UIColor *)labelColorDark;
 + (UIColor *)mainColor;
+
 + (UIColor *)pieChartBackgroundColor;
+
++ (UIColor *)dayPickerActiveDayColor;
++ (UIColor *)dayPickerInactiveDayColor;
++ (UIColor *)dayPickerActiveDayNameColor;
+
++ (UIColor *)waterColor;
 
 + (UIColor *)colorForEventType:(SPTEventType)type;
 
