@@ -22,7 +22,8 @@
 + (UIColor *)dayPickerInactiveDayColor;
 + (UIColor *)dayPickerActiveDayNameColor;
 
-+ (UIColor *)waterColor;
++ (UIColor *)waterColorLight;
++ (UIColor *)waterColorDark;
 
 + (UIColor *)colorForEventType:(SPTEventType)type;
 

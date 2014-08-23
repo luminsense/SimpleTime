@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		20225A6A19A1ABAB00E5A9CE /* addEventButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6519A1ABAB00E5A9CE /* addEventButton.png */; };
 		20225A6B19A1ABAB00E5A9CE /* currentEventFinishButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */; };
-		20225A6C19A1ABAB00E5A9CE /* myRecordButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6719A1ABAB00E5A9CE /* myRecordButton.png */; };
 		20225A6D19A1ABAB00E5A9CE /* newEventCancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */; };
 		20225A6E19A1ABAB00E5A9CE /* newEventDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A6919A1ABAB00E5A9CE /* newEventDoneButton.png */; };
 		20225A7319A1ABC400E5A9CE /* eventTypeNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 20225A7019A1ABC400E5A9CE /* eventTypeNone.png */; };
@@ -51,6 +50,15 @@
 		20DDE72C19A4BE930009E2D8 /* SPTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE72B19A4BE930009E2D8 /* SPTMainViewController.m */; };
 		20DDE73019A4BF140009E2D8 /* SPTHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE72E19A4BF140009E2D8 /* SPTHistoryViewController.m */; };
 		20DDE73119A4BF140009E2D8 /* SPTHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE72F19A4BF140009E2D8 /* SPTHistoryViewController.xib */; };
+		20F0BE4419A8E8CA009FCBF3 /* eventTypeDining.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE3B19A8E8CA009FCBF3 /* eventTypeDining.png */; };
+		20F0BE4519A8E8CA009FCBF3 /* eventTypeFun.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE3C19A8E8CA009FCBF3 /* eventTypeFun.png */; };
+		20F0BE4619A8E8CA009FCBF3 /* eventTypeRead.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE3D19A8E8CA009FCBF3 /* eventTypeRead.png */; };
+		20F0BE4719A8E8CA009FCBF3 /* eventTypeRelax.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE3E19A8E8CA009FCBF3 /* eventTypeRelax.png */; };
+		20F0BE4819A8E8CA009FCBF3 /* eventTypeSleep.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE3F19A8E8CA009FCBF3 /* eventTypeSleep.png */; };
+		20F0BE4919A8E8CA009FCBF3 /* eventTypeStudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE4019A8E8CA009FCBF3 /* eventTypeStudy.png */; };
+		20F0BE4A19A8E8CA009FCBF3 /* eventTypeTransport.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE4119A8E8CA009FCBF3 /* eventTypeTransport.png */; };
+		20F0BE4B19A8E8CA009FCBF3 /* eventTypeWork.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE4219A8E8CA009FCBF3 /* eventTypeWork.png */; };
+		20F0BE4C19A8E8CA009FCBF3 /* eventTypeWorkout.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0BE4319A8E8CA009FCBF3 /* eventTypeWorkout.png */; };
 		FC81C9CC562D42E5980E95F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AAC0C2F1A04D0AB3E71B6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +75,6 @@
 /* Begin PBXFileReference section */
 		20225A6519A1ABAB00E5A9CE /* addEventButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addEventButton.png; path = images/addEventButton.png; sourceTree = "<group>"; };
 		20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = currentEventFinishButton.png; path = images/currentEventFinishButton.png; sourceTree = "<group>"; };
-		20225A6719A1ABAB00E5A9CE /* myRecordButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myRecordButton.png; path = images/myRecordButton.png; sourceTree = "<group>"; };
 		20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newEventCancelButton.png; path = images/newEventCancelButton.png; sourceTree = "<group>"; };
 		20225A6919A1ABAB00E5A9CE /* newEventDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newEventDoneButton.png; path = images/newEventDoneButton.png; sourceTree = "<group>"; };
 		20225A7019A1ABC400E5A9CE /* eventTypeNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeNone.png; path = eventTypeImages/eventTypeNone.png; sourceTree = "<group>"; };
@@ -132,6 +139,15 @@
 		20DDE72D19A4BF140009E2D8 /* SPTHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTHistoryViewController.h; path = SimpleTime/SPTHistoryViewController.h; sourceTree = "<group>"; };
 		20DDE72E19A4BF140009E2D8 /* SPTHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTHistoryViewController.m; path = SimpleTime/SPTHistoryViewController.m; sourceTree = "<group>"; };
 		20DDE72F19A4BF140009E2D8 /* SPTHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SPTHistoryViewController.xib; path = SimpleTime/SPTHistoryViewController.xib; sourceTree = "<group>"; };
+		20F0BE3B19A8E8CA009FCBF3 /* eventTypeDining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeDining.png; path = eventTypeImages/eventTypeDining.png; sourceTree = "<group>"; };
+		20F0BE3C19A8E8CA009FCBF3 /* eventTypeFun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeFun.png; path = eventTypeImages/eventTypeFun.png; sourceTree = "<group>"; };
+		20F0BE3D19A8E8CA009FCBF3 /* eventTypeRead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeRead.png; path = eventTypeImages/eventTypeRead.png; sourceTree = "<group>"; };
+		20F0BE3E19A8E8CA009FCBF3 /* eventTypeRelax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeRelax.png; path = eventTypeImages/eventTypeRelax.png; sourceTree = "<group>"; };
+		20F0BE3F19A8E8CA009FCBF3 /* eventTypeSleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeSleep.png; path = eventTypeImages/eventTypeSleep.png; sourceTree = "<group>"; };
+		20F0BE4019A8E8CA009FCBF3 /* eventTypeStudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeStudy.png; path = eventTypeImages/eventTypeStudy.png; sourceTree = "<group>"; };
+		20F0BE4119A8E8CA009FCBF3 /* eventTypeTransport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeTransport.png; path = eventTypeImages/eventTypeTransport.png; sourceTree = "<group>"; };
+		20F0BE4219A8E8CA009FCBF3 /* eventTypeWork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeWork.png; path = eventTypeImages/eventTypeWork.png; sourceTree = "<group>"; };
+		20F0BE4319A8E8CA009FCBF3 /* eventTypeWorkout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventTypeWorkout.png; path = eventTypeImages/eventTypeWorkout.png; sourceTree = "<group>"; };
 		2D920D81306243D0894BABC0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		68AAC0C2F1A04D0AB3E71B6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,7 +182,6 @@
 			children = (
 				20225A6519A1ABAB00E5A9CE /* addEventButton.png */,
 				20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */,
-				20225A6719A1ABAB00E5A9CE /* myRecordButton.png */,
 				20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */,
 				20225A6919A1ABAB00E5A9CE /* newEventDoneButton.png */,
 			);
@@ -200,6 +215,15 @@
 				20225A7019A1ABC400E5A9CE /* eventTypeNone.png */,
 				20225A7119A1ABC400E5A9CE /* eventTypeNonePressed.png */,
 				20225A7219A1ABC400E5A9CE /* eventTypeNoneSelected.png */,
+				20F0BE3B19A8E8CA009FCBF3 /* eventTypeDining.png */,
+				20F0BE3C19A8E8CA009FCBF3 /* eventTypeFun.png */,
+				20F0BE3D19A8E8CA009FCBF3 /* eventTypeRead.png */,
+				20F0BE3E19A8E8CA009FCBF3 /* eventTypeRelax.png */,
+				20F0BE3F19A8E8CA009FCBF3 /* eventTypeSleep.png */,
+				20F0BE4019A8E8CA009FCBF3 /* eventTypeStudy.png */,
+				20F0BE4119A8E8CA009FCBF3 /* eventTypeTransport.png */,
+				20F0BE4219A8E8CA009FCBF3 /* eventTypeWork.png */,
+				20F0BE4319A8E8CA009FCBF3 /* eventTypeWorkout.png */,
 			);
 			name = "Event Type Images";
 			sourceTree = "<group>";
@@ -450,19 +474,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F0BE4719A8E8CA009FCBF3 /* eventTypeRelax.png in Resources */,
 				2088FD5219A60CB40065F7CD /* SPTEventCell.xib in Resources */,
 				20DDE73119A4BF140009E2D8 /* SPTHistoryViewController.xib in Resources */,
 				20225A6B19A1ABAB00E5A9CE /* currentEventFinishButton.png in Resources */,
 				209367A219A0C35E00CCFBAC /* SimpleTime.storyboard in Resources */,
-				20225A6C19A1ABAB00E5A9CE /* myRecordButton.png in Resources */,
+				20F0BE4B19A8E8CA009FCBF3 /* eventTypeWork.png in Resources */,
+				20F0BE4619A8E8CA009FCBF3 /* eventTypeRead.png in Resources */,
+				20F0BE4819A8E8CA009FCBF3 /* eventTypeSleep.png in Resources */,
 				20A23A54199924F700E4C577 /* InfoPlist.strings in Resources */,
+				20F0BE4419A8E8CA009FCBF3 /* eventTypeDining.png in Resources */,
+				20F0BE4519A8E8CA009FCBF3 /* eventTypeFun.png in Resources */,
 				20225A6A19A1ABAB00E5A9CE /* addEventButton.png in Resources */,
 				20225A6D19A1ABAB00E5A9CE /* newEventCancelButton.png in Resources */,
+				20F0BE4919A8E8CA009FCBF3 /* eventTypeStudy.png in Resources */,
+				20F0BE4C19A8E8CA009FCBF3 /* eventTypeWorkout.png in Resources */,
 				20557D33199B9432002633CC /* DataTesting.storyboard in Resources */,
 				20225A7419A1ABC400E5A9CE /* eventTypeNonePressed.png in Resources */,
 				20A23A5C199924F700E4C577 /* Images.xcassets in Resources */,
 				20225A7519A1ABC400E5A9CE /* eventTypeNoneSelected.png in Resources */,
 				20225A7319A1ABC400E5A9CE /* eventTypeNone.png in Resources */,
+				20F0BE4A19A8E8CA009FCBF3 /* eventTypeTransport.png in Resources */,
 				20225A6E19A1ABAB00E5A9CE /* newEventDoneButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

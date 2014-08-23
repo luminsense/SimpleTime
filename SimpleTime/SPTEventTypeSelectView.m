@@ -31,30 +31,57 @@
         [self createItemWithX:0 Y:0 image:image pressedImage:pressedImage selectedImage:selectedImage selected:YES];
         
         // Type: Work
+        image = [UIImage imageNamed:@"eventTypeWork.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:60 Y:0 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
-        // Type: Dining
+        // Type: Study
+        image = [UIImage imageNamed:@"eventTypeStudy.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:120 Y:0 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
         // Type: Fun
+        image = [UIImage imageNamed:@"eventTypeFun.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:180 Y:0 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
         // Type: Sleep
+        image = [UIImage imageNamed:@"eventTypeSleep.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:240 Y:0 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
         // Type: Workout
+        image = [UIImage imageNamed:@"eventTypeWorkout.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:0 Y:60 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
-        // Type: Personal
+        // Type: Dining
+        image = [UIImage imageNamed:@"eventTypeDining.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:60 Y:60 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
         // Type: Read
+        image = [UIImage imageNamed:@"eventTypeRead.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:120 Y:60 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
         // Type: Transport
+        image = [UIImage imageNamed:@"eventTypeTransport.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:180 Y:60 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
         
-        // Type: Home
+        // Type: Relax
+        image = [UIImage imageNamed:@"eventTypeRelax.png"];
+        pressedImage = [UIImage imageNamed:@"eventTypeNonePressed.png"];
+        selectedImage = [UIImage imageNamed:@"eventTypeNoneSelected.png"];
         [self createItemWithX:240 Y:60 image:image pressedImage:pressedImage selectedImage:selectedImage selected:NO];
     }
     return self;

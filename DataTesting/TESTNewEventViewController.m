@@ -162,7 +162,7 @@
             type = SPTEventTypeSleep;
             break;
         case 5:
-            type = SPTEventTypeDining;
+            type = SPTEventTypeStudy;
             break;
         case 6:
             type = SPTEventTypeTransport;
@@ -171,10 +171,10 @@
             type = SPTEventTypeRead;
             break;
         case 8:
-            type = SPTEventTypePersonal;
+            type = SPTEventTypeDining;
             break;
         case 9:
-            type = SPTEventTypeHome;
+            type = SPTEventTypeRelax;
             break;
         default:
             type = SPTEventTypeNone;

@@ -23,7 +23,10 @@
 @property (nonatomic, strong) NSDateFormatter *monthFormatter;
 @property (nonatomic, strong) NSDate *currentDate;
 @property (nonatomic, strong) NSArray *events;
-@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeftRecognizer;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRightRecognizer;
+
+@property (nonatomic, strong) NSDate *earliestDate;
 
 @end
 
@@ -33,7 +36,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _earliestDate = [NSDate dateFromDay:1 month:1 year:2000];
     }
     return self;
 }
@@ -43,9 +46,6 @@
     [super viewDidLoad];
     self.currentDate = [NSDate date];
     self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
-    
-    NSDateComponents *comp = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth fromDate:self.currentDate];
-    NSLog(@"Self.CurrentDate: %ld, %ld", comp.day, comp.month);
     
     self.weekdayFormatter = [[NSDateFormatter alloc] init];
     [self.weekdayFormatter setDateFormat:@"EEE"];
@@ -77,7 +77,7 @@
     self.dayPicker.activeDayNameColor = [UIColor lightGrayColor];
     self.dayPicker.bottomBorderColor = [SPTColor mainColor];
     //self.dayPicker.dayCellFooterHeight = 2.0;
-    [self.dayPicker setStartDate:[NSDate dateFromDay:1 month:1 year:2000] endDate:self.currentDate];
+    [self.dayPicker setStartDate:self.earliestDate endDate:self.currentDate];
     [self.dayPicker setCurrentDate:self.currentDate animated:NO];
     
     // Configure frame of day picker
@@ -118,14 +118,19 @@
     [self.tableView.tableHeaderView addSubview:self.pieChart];
     
     UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, 279.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
-    separator.backgroundColor = [UIColor lightGrayColor];
+    separator.backgroundColor = [UIColor colorWithRed:200.0/255.0 green:199.0/255.0 blue:204.0/255.0 alpha:1];
     [self.tableView.tableHeaderView addSubview:separator];
     
-    // Load swipe recognizer
-    self.swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedInTableView:)];
-    self.swipeRecognizer.numberOfTouchesRequired = 1;
-    //self.swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionLeft;
-    [self.tableView addGestureRecognizer:self.swipeRecognizer];
+    // Setting swipe recognizer
+    self.swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeftInTableView:)];
+    self.swipeLeftRecognizer.numberOfTouchesRequired = 1;
+    [self.swipeLeftRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.tableView addGestureRecognizer:self.swipeLeftRecognizer];
+    
+    self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRightInTableView:)];
+    self.swipeRightRecognizer.numberOfTouchesRequired = 1;
+    [self.swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.tableView addGestureRecognizer:self.swipeRightRecognizer];
     
     /*
     UIView *dayPickerSeparator = [[UIView alloc] initWithFrame:CGRectMake(0, self.dayPicker.frame.origin.y + self.dayPicker.frame.size.height - 2, [UIScreen mainScreen].bounds.size.width, 0.5)];
@@ -137,7 +142,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"Pie chart should first stroke");
     [self.pieChart strokeChart];
 }
 
@@ -152,12 +156,8 @@
 
 - (void)dayPicker:(MZDayPicker *)dayPicker didSelectDay:(MZDay *)day
 {
-    // NSLog(@"Picker did select day");
     self.currentDate = day.date;
-    self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
-    [self updateTitleLabel];
-    [self refreshPieChartWithCurrentDate];
-    [self.tableView reloadData];
+    [self updateEverythingWithCurrentDate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -187,16 +187,43 @@
 {
     NSArray *items = [self getDataItemsFromEvents:self.events inDate:self.currentDate];
     [self.pieChart setValue:items forKey:@"items"];
-    // NSLog(@"Items Count: %ld", items.count);
     [self.pieChart strokeChart];
 }
 
-- (void)swipedInTableView:(UISwipeGestureRecognizer *)gr
+- (void)updateEverythingWithCurrentDate
 {
-    if (gr.direction == UISwipeGestureRecognizerDirectionRight) {
-        NSLog(@">>>>>>Right");
-    } else if (gr.direction == UISwipeGestureRecognizerDirectionLeft) {
-        NSLog(@">>>>>>Left");
+    self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
+    [self updateTitleLabel];
+    [self refreshPieChartWithCurrentDate];
+    [self.tableView reloadData];
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+}
+
+#pragma mark - Swipe Gesture Handling
+
+- (void)swipedLeftInTableView:(UISwipeGestureRecognizer *)gr
+{
+    NSDateComponents *todayComp = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
+    NSDateComponents *currentComp = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.currentDate];
+    
+    if (!(todayComp.year == currentComp.year && todayComp.month == currentComp.month && todayComp.day == currentComp.day)) {
+        NSTimeInterval secondsInDay = 60 * 60 * 24;
+        self.currentDate = [NSDate dateWithTimeInterval:secondsInDay sinceDate:self.currentDate];
+        [self.dayPicker setCurrentDate:self.currentDate animated:YES];
+        [self updateEverythingWithCurrentDate];
+    }
+}
+
+- (void)swipedRightInTableView:(UISwipeGestureRecognizer *)gr
+{
+    NSDateComponents *earlistComp = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.earliestDate];
+    NSDateComponents *currentComp = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.currentDate];
+    
+    if (!(earlistComp.year == currentComp.year && earlistComp.month == currentComp.month && earlistComp.day == currentComp.day)) {
+        NSTimeInterval secondsInDay = 60 * 60 * 24;
+        self.currentDate = [NSDate dateWithTimeInterval:-secondsInDay sinceDate:self.currentDate];
+        [self.dayPicker setCurrentDate:self.currentDate animated:YES];
+        [self updateEverythingWithCurrentDate];
     }
 }
 

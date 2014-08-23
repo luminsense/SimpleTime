@@ -161,7 +161,6 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
                                   animated:animated];
     
     [self setupTableViewContent];
-
 }
 
 - (void)setCurrentDay:(NSInteger)currentDay

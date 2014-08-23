@@ -52,14 +52,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-O6-VFu">
-                                <rect key="frame" x="90" y="431" width="140" height="50"/>
+                                <rect key="frame" x="90" y="488" width="140" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="J2I-b1-qAq"/>
+                                    <constraint firstAttribute="height" constant="20" id="J2I-b1-qAq"/>
                                     <constraint firstAttribute="width" constant="140" id="qZS-p3-Jrt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="My Record" backgroundImage="myRecordButton.png">
-                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="My Record">
+                                    <color key="titleColor" red="0.13333333333333333" green="0.5607843137254902" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -89,8 +89,8 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-Vi-RIU">
-                                <rect key="frame" x="15" y="144" width="290" height="44"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                                <rect key="frame" x="15" y="136" width="290" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -107,10 +107,14 @@
                                     <action selector="addEventCancelled:" destination="9Oo-Jh-DcQ" eventType="touchUpInside" id="OWE-nI-mt2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-sG-ocl">
-                                <rect key="frame" x="90" y="270" width="140" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-sG-ocl">
+                                <rect key="frame" x="120" y="348" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="96Z-wX-Knm"/>
+                                    <constraint firstAttribute="height" constant="80" id="mdG-AP-633"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Finish" backgroundImage="currentEventFinishButton.png">
+                                <state key="normal" backgroundImage="currentEventFinishButton.png">
                                     <color key="titleColor" red="0.25098039220000001" green="0.86274509799999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -127,10 +131,12 @@
                             <constraint firstAttribute="centerX" secondItem="jqX-O6-VFu" secondAttribute="centerX" id="6bv-cm-pvj"/>
                             <constraint firstItem="nmq-jg-hI5" firstAttribute="top" secondItem="6xa-98-kxd" secondAttribute="top" constant="190" id="KA5-Cw-ypG"/>
                             <constraint firstItem="0pH-3j-fe7" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" constant="4" id="KUH-FA-1lo"/>
+                            <constraint firstAttribute="centerX" secondItem="KYu-sG-ocl" secondAttribute="centerX" id="Sfj-uA-AEg"/>
                             <constraint firstItem="4eo-NW-khn" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" constant="4" id="Zpe-8l-iOx"/>
                             <constraint firstItem="0pH-3j-fe7" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="15" id="d9x-Bc-6Hi"/>
                             <constraint firstAttribute="trailing" secondItem="4eo-NW-khn" secondAttribute="trailing" constant="15" id="mH5-9X-VCk"/>
-                            <constraint firstItem="9Dn-E4-IJF" firstAttribute="top" secondItem="jqX-O6-VFu" secondAttribute="bottom" constant="87" id="pfs-US-CNG"/>
+                            <constraint firstAttribute="bottom" secondItem="KYu-sG-ocl" secondAttribute="bottom" constant="140" id="mcY-gg-SVR"/>
+                            <constraint firstItem="9Dn-E4-IJF" firstAttribute="top" secondItem="jqX-O6-VFu" secondAttribute="bottom" constant="60" id="pfs-US-CNG"/>
                             <constraint firstItem="VQd-nl-si2" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="15" id="uis-18-AoH"/>
                         </constraints>
                     </view>
@@ -154,8 +160,7 @@
     </scenes>
     <resources>
         <image name="addEventButton.png" width="160" height="160"/>
-        <image name="currentEventFinishButton.png" width="280" height="100"/>
-        <image name="myRecordButton.png" width="280" height="100"/>
+        <image name="currentEventFinishButton.png" width="160" height="160"/>
         <image name="newEventCancelButton.png" width="72" height="72"/>
         <image name="newEventDoneButton.png" width="72" height="72"/>
     </resources>

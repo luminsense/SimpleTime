@@ -15,14 +15,14 @@
 typedef NS_ENUM(NSInteger, SPTEventType) {
     SPTEventTypeNone            = 0,
     SPTEventTypeWork            = 1,
-    SPTEventTypeDining          = 2,
+    SPTEventTypeStudy           = 2,
     SPTEventTypeFun             = 3,
     SPTEventTypeSleep           = 4,
     SPTEventTypeWorkout         = 5,
-    SPTEventTypePersonal        = 6,
+    SPTEventTypeDining          = 6,
     SPTEventTypeRead            = 7,
     SPTEventTypeTransport       = 8,
-    SPTEventTypeHome            = 9
+    SPTEventTypeRelax           = 9
 };
 
 @property (nonatomic, retain) NSDate * beginDate;

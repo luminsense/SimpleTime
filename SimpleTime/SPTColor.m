@@ -22,7 +22,7 @@
 
 + (UIColor *)mainColor
 {
-    return [UIColor colorWithRed:64.0/255.0 green:220.0/255.0 blue:82.0/255.0 alpha:1];
+    return [UIColor colorWithRed:34.0/255.0 green:143.0/255.0 blue:189.0/255.0 alpha:1];
 }
 
 + (UIColor *)pieChartBackgroundColor
@@ -30,9 +30,14 @@
     return [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
 }
 
-+ (UIColor *)waterColor
++ (UIColor *)waterColorLight
 {
-    return [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+    return [UIColor colorWithRed:232.0/255.0 green:248.0/255.0 blue:255.0/255.0 alpha:1];
+}
+
++ (UIColor *)waterColorDark
+{
+    return [UIColor colorWithRed:205.0/255.0 green:239.0/255.0 blue:255.0/255.0 alpha:1];
 }
 
 + (UIColor *)dayPickerActiveDayColor
@@ -61,7 +66,7 @@
         case SPTEventTypeWork:
             color = [UIColor blueColor];
             break;
-        case SPTEventTypeDining:
+        case SPTEventTypeStudy:
             color = [UIColor orangeColor];
             break;
         case SPTEventTypeFun:
@@ -73,7 +78,7 @@
         case SPTEventTypeWorkout:
             color = [UIColor redColor];
             break;
-        case SPTEventTypePersonal:
+        case SPTEventTypeDining:
             color = [UIColor purpleColor];
             break;
         case SPTEventTypeRead:
@@ -82,7 +87,7 @@
         case SPTEventTypeTransport:
             color = [UIColor yellowColor];
             break;
-        case SPTEventTypeHome:
+        case SPTEventTypeRelax:
             color = [UIColor darkGrayColor];
             break;
         default:

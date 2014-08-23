@@ -47,11 +47,13 @@
     return self;
 }
 
+/*
 - (void)setCurrentLinePointY:(float)currentLinePointY
 {
     // TODO: need to finish
     _currentLinePointY++;
 }
+ */
 
 -(void)animateWave
 {

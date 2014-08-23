@@ -54,19 +54,23 @@
     
     self.eventTitleField.delegate = self;
     
-    // Load water effect
-    self.topWaterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds waterColor:[UIColor colorWithRed:.92 green:.92 blue:.92 alpha:1]];
+    // Load double-layer water effect
+    self.topWaterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds waterColor:[SPTColor waterColorDark]];
     self.topWaterView.speedVarity = 0.07;
     self.topWaterView.offset = 0;
     self.topWaterView.height = 8;
     [self.view addSubview:self.topWaterView];
     
-    self.backWaterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds waterColor:[SPTColor waterColor]];
+    self.backWaterView = [[VWWWaterView alloc] initWithFrame:self.view.bounds waterColor:[SPTColor waterColorLight]];
     self.backWaterView.speed = 3;
     self.backWaterView.speedVarity = 0.12;
     self.backWaterView.offset = 10;
     self.backWaterView.height = 4;
     [self.view addSubview:self.backWaterView];
+    
+    // Add timer and update water effect
+    [self updateWaterViewLinePointY];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateWaterViewLinePointY) userInfo:nil repeats:YES];
     
     // Load type selector
     self.typeSelector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake(15, 128, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
@@ -108,6 +112,8 @@
     
     [self.view sendSubviewToBack:self.topWaterView];
     [self.view sendSubviewToBack:self.backWaterView];
+    
+    // self.currentEventTitleLabel.textColor = [SPTColor mainColor];
 }
 
 - (void)viewDidLayoutSubviews
@@ -127,6 +133,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateWaterViewLinePointY
+{
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
+    [components setHour:0];
+    [components setMinute:0];
+    [components setSecond:0];
+    [components setNanosecond:0];
+    NSDate *startOfDay = [[NSCalendar currentCalendar] dateFromComponents:components];
+    
+    NSTimeInterval secondsOfDay = 60 * 60 * 24;
+    NSTimeInterval currentSecond = [[NSDate date] timeIntervalSinceDate:startOfDay];
+    float newLintPointY = [UIScreen mainScreen].bounds.size.height * currentSecond / secondsOfDay;
+    //float newLintPointY = 250.0;
+    
+    self.topWaterView.currentLinePointY = newLintPointY;
+    self.backWaterView.currentLinePointY = newLintPointY - 8;
+}
+
 
 #pragma mark - Events Handling
 
@@ -143,7 +167,6 @@
 
 - (IBAction)addEventDone:(id)sender
 {
-    NSLog(@"Event title text: %@", self.eventTitleField.text);
     NSString *title;
     if (self.eventTitleField.text.length > 0) {
         title = self.eventTitleField.text;
@@ -186,22 +209,22 @@
             placeholder = @"";
             break;
         case SPTEventTypeWork:
-            placeholder = @"Working";
+            placeholder = @"Work";
             break;
-        case SPTEventTypeDining:
-            placeholder = @"Dining";
+        case SPTEventTypeStudy:
+            placeholder = @"Study";
             break;
         case SPTEventTypeFun:
-            placeholder = @"Playing";
+            placeholder = @"Play";
             break;
         case SPTEventTypeSleep:
-            placeholder = @"Sleeping";
+            placeholder = @"Sleep";
             break;
         case SPTEventTypeWorkout:
             placeholder = @"Workout";
             break;
-        case SPTEventTypePersonal:
-            placeholder = @"Personal issue";
+        case SPTEventTypeDining:
+            placeholder = @"Dining";
             break;
         case SPTEventTypeRead:
             placeholder = @"Reading";
@@ -209,8 +232,8 @@
         case SPTEventTypeTransport:
             placeholder = @"Transportation";
             break;
-        case SPTEventTypeHome:
-            placeholder = @"Stay at home";
+        case SPTEventTypeRelax:
+            placeholder = @"Relax";
             break;
         default:
             placeholder = @"";
@@ -266,10 +289,12 @@
     [self.currentEventTimer start];
     
     // Show finishEventButton (according to currentEventTitleLabel's bound)
+    /*
     self.currentEventFinishButton.frame = CGRectMake(self.currentEventFinishButton.frame.origin.x,
                                                      self.currentEventTimer.frame.origin.y + self.currentEventTimer.frame.size.height + 20.0,
                                                      self.currentEventFinishButton.frame.size.width,
                                                      self.currentEventFinishButton.frame.size.height);
+     */
     self.currentEventFinishButton.hidden = NO;
 }
 
@@ -363,11 +388,13 @@
     [self.currentEventTimer reset];
     [self.currentEventTimer start];
     
+    /*
     // Show currentEventFinishButton (according to currentEventTitleLabel's bound)
     self.currentEventFinishButton.frame = CGRectMake(self.currentEventFinishButton.frame.origin.x,
                                                      self.currentEventTimer.frame.origin.y + self.currentEventTimer.frame.size.height + 20.0,
                                                      self.currentEventFinishButton.frame.size.width,
                                                      self.currentEventFinishButton.frame.size.height);
+     */
     self.currentEventFinishButton.hidden = NO;
     
     // Show myRecordButton
@@ -415,7 +442,6 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSLog(@"Text Field should change char");
     if (textField == self.eventTitleField) {
         NSUInteger length = textField.text.length + string.length - range.length;
         if (length > 0 || self.eventTitleField.placeholder.length > 0) {
