@@ -61,34 +61,34 @@
     
     switch (type) {
         case SPTEventTypeNone:
-            color = [UIColor grayColor];
+            color = [SPTColor mainColor];
             break;
         case SPTEventTypeWork:
-            color = [UIColor blueColor];
+            color = [UIColor colorWithRed:6.0 / 255.0 green:185.0 / 255.0 blue:209.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeStudy:
-            color = [UIColor orangeColor];
+            color = [UIColor colorWithRed:103.0 / 255.0 green:149.0 / 255.0 blue:40.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeFun:
-            color = [UIColor cyanColor];
+            color = [UIColor colorWithRed:153.0 / 255.0 green:102.0 / 255.0 blue:204.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeSleep:
-            color = [UIColor blackColor];
+            color = [UIColor colorWithRed:73.0 / 255.0 green:90.0 / 255.0 blue:128.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeWorkout:
-            color = [UIColor redColor];
+            color = [UIColor colorWithRed:235.0 / 255.0 green:85.0 / 255.0 blue:40.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeDining:
-            color = [UIColor purpleColor];
+            color = [UIColor colorWithRed:245.0 / 255.0 green:171.0 / 255.0 blue:0 / 255.0 alpha:1];
             break;
         case SPTEventTypeRead:
-            color = [UIColor magentaColor];
+            color = [UIColor colorWithRed:60.0 / 255.0 green:179.0 / 255.0 blue:113.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeTransport:
-            color = [UIColor yellowColor];
+            color = [UIColor colorWithRed:116.0 / 255.0 green:149.0 / 255.0 blue:166.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeRelax:
-            color = [UIColor darkGrayColor];
+            color = [UIColor colorWithRed:0 / 255.0 green:158.0 / 255.0 blue:163.0 / 255.0 alpha:1];
             break;
         default:
             color = [UIColor clearColor];

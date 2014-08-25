@@ -301,7 +301,11 @@
 
 - (void)transitionToEditingStatus
 {
-    // Move titleLabel
+    self.cancelButton.alpha = 0;
+    self.doneButton.alpha = 0;
+    self.typeSelector.alpha = 0;
+    
+    // Move titleLabel and hide water view
     [UIView animateWithDuration:0.5
                           delay:0.0
          usingSpringWithDamping:0.7
@@ -312,6 +316,13 @@
                          [self.titleLabel setFrame:frame];
                          self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18.0];
                          self.titleLabel.textColor = [SPTColor labelColorLight];
+                                                  
+                         self.topWaterView.alpha = 0;
+                         self.backWaterView.alpha = 0;
+                         
+                         self.cancelButton.alpha = 1;
+                         self.doneButton.alpha = 1;
+                         self.typeSelector.alpha = 1;
                      }
                      completion:NULL];
     
@@ -333,9 +344,35 @@
 
 - (void)quitEditingStatus
 {
+    [UIView animateWithDuration:2
+                          delay:0.0
+         usingSpringWithDamping:0.7
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.topWaterView.alpha = 1;
+                         self.backWaterView.alpha = 1;
+                     }
+                     completion:NULL];
+    
     // Hide cancel and done button
-    self.cancelButton.hidden = YES;
-    self.doneButton.hidden = YES;
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+         usingSpringWithDamping:0.7
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.cancelButton.alpha = 0;
+                         self.doneButton.alpha = 0;
+                         self.typeSelector.alpha = 0;
+                     }
+                     completion:^(BOOL finished){
+                         self.cancelButton.hidden = YES;
+                         self.doneButton.hidden = YES;
+                         self.typeSelector.hidden = YES;
+                         [self.typeSelector reset];
+                     }];
+    
     
     // Hide currentEventField, resign first responder and clear content
     [self.eventTitleField resignFirstResponder];
@@ -343,10 +380,6 @@
     self.eventTitleField.placeholder = nil;
     self.eventTitleField.text = @"";
     self.eventTitleField.textAlignment = NSTextAlignmentCenter;
-    
-    // Hide typeSelector and RESET
-    self.typeSelector.hidden = YES;
-    [self.typeSelector reset];
 }
 
 - (void)transitionToCurrentEventStatus

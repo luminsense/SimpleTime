@@ -280,7 +280,43 @@
 
 - (UIImage *)eventImageForType:(SPTEventType)type
 {
-    return [UIImage imageNamed:@"eventTypeNone.png"];
+    UIImage *image;
+    switch (type) {
+        case SPTEventTypeNone:
+            image = [UIImage imageNamed:@"eventTypeNoneIcon.png"];
+            break;
+        case SPTEventTypeWork:
+            image = [UIImage imageNamed:@"eventTypeWorkIcon.png"];
+            break;
+        case SPTEventTypeStudy:
+            image = [UIImage imageNamed:@"eventTypeStudyIcon.png"];
+            break;
+        case SPTEventTypeFun:
+            image = [UIImage imageNamed:@"eventTypeFunIcon.png"];
+            break;
+        case SPTEventTypeSleep:
+            image = [UIImage imageNamed:@"eventTypeSleepIcon.png"];
+            break;
+        case SPTEventTypeWorkout:
+            image = [UIImage imageNamed:@"eventTypeWorkoutIcon.png"];
+            break;
+        case SPTEventTypeDining:
+            image = [UIImage imageNamed:@"eventTypeDiningIcon.png"];
+            break;
+        case SPTEventTypeRead:
+            image = [UIImage imageNamed:@"eventTypeReadIcon.png"];
+            break;
+        case SPTEventTypeTransport:
+            image = [UIImage imageNamed:@"eventTypeTransportIcon.png"];
+            break;
+        case SPTEventTypeRelax:
+            image = [UIImage imageNamed:@"eventTypeRelaxIcon.png"];
+            break;
+        default:
+            image = [UIImage imageNamed:@"eventTypeNoneIcon.png"];
+            break;
+    }
+    return image;
 }
 
 #pragma mark - Get pie chart items from events
