@@ -160,6 +160,12 @@
     return event;
 }
 
+- (void)removeEvent:(SPTEvent *)event
+{
+    [self.context deleteObject:event];
+    [self saveChanges];
+}
+
 #pragma mark - Get events
 
 - (NSArray *)getEventsForDate:(NSDate *)date

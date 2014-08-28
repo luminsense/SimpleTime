@@ -12,7 +12,7 @@
 
 + (UIColor *)labelColorLight
 {
-    return [UIColor lightGrayColor];
+    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
 }
 
 + (UIColor *)labelColorDark
@@ -53,6 +53,11 @@
 + (UIColor *)dayPickerInactiveDayColor
 {
     return [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
+}
+
++ (UIColor *)separatorColor
+{
+    return [UIColor colorWithRed:200.0/255.0 green:199.0/255.0 blue:204.0/255.0 alpha:1];
 }
 
 + (UIColor *)colorForEventType:(SPTEventType)type

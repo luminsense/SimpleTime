@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSArray *events;
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeRightRecognizer;
-
+@property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, strong) NSDate *earliestDate;
 
 @end
@@ -48,34 +48,30 @@
     self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
     
     self.weekdayFormatter = [[NSDateFormatter alloc] init];
-    [self.weekdayFormatter setDateFormat:@"EEE"];
+    [self.weekdayFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [self.weekdayFormatter setDateFormat:@"EE"];
     
     self.monthFormatter = [[NSDateFormatter alloc] init];
     [self.monthFormatter setDateFormat:@"MMMM YYYY"];
+    [self.monthFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     
     [self updateTitleLabel];
     
     // Add close button
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 24, 36, 36)];
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(11, 20, 44, 44)];
     [closeButton setBackgroundImage:[UIImage imageNamed:@"newEventCancelButton.png"] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:closeButton];
-    
-    /*
-    // Add bar button item
-    UIBarButtonItem *closeButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss:)];
-    self.navigationItem.leftBarButtonItem = closeButtonItem;
-     */
     
     // Load day picker
     self.dayPicker.delegate = self;
     self.dayPicker.dataSource = self;
     self.dayPicker.dayNameLabelFontSize = 12.0f;
     self.dayPicker.dayLabelFontSize = 18.0f;
-    self.dayPicker.activeDayColor = [UIColor blackColor];
+    self.dayPicker.activeDayColor = [SPTColor labelColorDark];
     self.dayPicker.inactiveDayColor = [UIColor colorWithRed:.8 green:.8 blue:.8 alpha:1];
-    self.dayPicker.activeDayNameColor = [UIColor lightGrayColor];
-    self.dayPicker.bottomBorderColor = [SPTColor mainColor];
+    self.dayPicker.activeDayNameColor = [SPTColor labelColorLight];
+    self.dayPicker.bottomBorderColor = [SPTColor separatorColor];
     //self.dayPicker.dayCellFooterHeight = 2.0;
     [self.dayPicker setStartDate:self.earliestDate endDate:self.currentDate];
     [self.dayPicker setCurrentDate:self.currentDate animated:NO];
@@ -108,9 +104,11 @@
     header.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = header;
     
+    float pieChartWidth = 220.0;
+    
     // Load pie chart
     NSArray *items = [self getDataItemsFromEvents:self.events inDate:self.currentDate];
-    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(50.0, 30.0, 220.0, 220.0) items:items];
+    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - pieChartWidth) / 2, 30.0, pieChartWidth, pieChartWidth) items:items];
     self.pieChart.descriptionTextColor = [UIColor clearColor];
     self.pieChart.descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:14.0];
     self.pieChart.descriptionTextShadowColor = [UIColor clearColor];
@@ -118,7 +116,7 @@
     [self.tableView.tableHeaderView addSubview:self.pieChart];
     
     UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, 279.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
-    separator.backgroundColor = [UIColor colorWithRed:200.0/255.0 green:199.0/255.0 blue:204.0/255.0 alpha:1];
+    separator.backgroundColor = [SPTColor separatorColor];
     [self.tableView.tableHeaderView addSubview:separator];
     
     // Setting swipe recognizer
@@ -132,6 +130,11 @@
     [self.swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.tableView addGestureRecognizer:self.swipeRightRecognizer];
     
+    // Load separator view
+    self.separatorView = [[UIView alloc] initWithFrame:CGRectMake(0, self.dayPicker.frame.origin.y + self.dayPicker.frame.size.height, [UIScreen mainScreen].bounds.size.width, 0.5)];
+    self.separatorView.backgroundColor = [SPTColor separatorColor];
+    self.separatorView.alpha = 0;
+    [self.view addSubview:self.separatorView];
     /*
     UIView *dayPickerSeparator = [[UIView alloc] initWithFrame:CGRectMake(0, self.dayPicker.frame.origin.y + self.dayPicker.frame.size.height - 2, [UIScreen mainScreen].bounds.size.width, 0.5)];
     dayPickerSeparator.backgroundColor = [SPTColor mainColor];
@@ -278,6 +281,30 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        SPTEvent *thisEvent = (SPTEvent *)self.events[indexPath.row];
+        [[SPTEventStore sharedStore] removeEvent:thisEvent];
+        self.events = [[SPTEventStore sharedStore] getEventsForDate:self.currentDate];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self refreshPieChartWithCurrentDate];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y <= 30) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.separatorView.alpha = 0;
+        }];
+    } else {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.separatorView.alpha = 1;
+        }];
+    }
+}
+
 - (UIImage *)eventImageForType:(SPTEventType)type
 {
     UIImage *image;
@@ -325,7 +352,7 @@
 {
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
-    // NSLog(@">>>> Events Count: %lu", (unsigned long)events.count);
+    //NSLog(@">>>> Events Count: %lu", (unsigned long)events.count);
     
     if (events.count == 0) {
         [items addObject:[PNPieChartDataItem dataItemWithValue:10 color:[SPTColor pieChartBackgroundColor] description:@"Test"]];
@@ -376,7 +403,8 @@
         }
         
         if (i == last) {
-            if (event.endDate > endOfDay) {
+            //NSLog(@"%@ is the last item", event.title);
+            if ([event.endDate compare:endOfDay] == NSOrderedDescending) {
                 // Add this event as eventBeginSec - 24:59:59
                 eventEndSec = [endOfDay timeIntervalSinceDate:startOfDay];
                 [items addObject:[PNPieChartDataItem dataItemWithValue:(eventEndSec - eventBeginSec) / secOfDay
@@ -401,7 +429,7 @@
         
     }
     
-    // NSLog(@">>>> Items Count: %lu", (unsigned long)items.count);
+    //NSLog(@">>>> Items Count: %lu", (unsigned long)items.count);
     
     return items;
 }

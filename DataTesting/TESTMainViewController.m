@@ -120,7 +120,7 @@
 - (void)valueDidChangeInTypeSelectView:(SPTEventTypeSelectView *)selector
 {
     SPTEventType type = [selector currentSelectedType];
-    self.eventTypeTestingLabel.text = [NSString stringWithFormat:@"%ld", type];
+    self.eventTypeTestingLabel.text = [NSString stringWithFormat:@"%d", type];
 }
 
 /*

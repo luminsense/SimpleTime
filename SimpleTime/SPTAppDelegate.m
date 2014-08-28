@@ -14,6 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [SPTEventStore sharedStore];
+    [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
     return YES;
 }
 

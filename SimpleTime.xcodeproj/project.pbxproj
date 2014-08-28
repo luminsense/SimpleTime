@@ -101,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200E7DA619AE136B006C323A /* libPods-PNChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PNChart.a"; path = "Pods/build/Debug-iphoneos/libPods-PNChart.a"; sourceTree = "<group>"; };
 		20225A6519A1ABAB00E5A9CE /* addEventButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addEventButton.png; path = images/addEventButton.png; sourceTree = "<group>"; };
 		20225A6619A1ABAB00E5A9CE /* currentEventFinishButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = currentEventFinishButton.png; path = images/currentEventFinishButton.png; sourceTree = "<group>"; };
 		20225A6819A1ABAB00E5A9CE /* newEventCancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newEventCancelButton.png; path = images/newEventCancelButton.png; sourceTree = "<group>"; };
@@ -368,6 +369,7 @@
 		20A23A48199924F700E4C577 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				200E7DA619AE136B006C323A /* libPods-PNChart.a */,
 				20A23A49199924F700E4C577 /* Foundation.framework */,
 				20A23A4B199924F700E4C577 /* CoreGraphics.framework */,
 				20A23A4D199924F700E4C577 /* UIKit.framework */,
@@ -530,6 +532,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = LumiNg;
 				TargetAttributes = {
+					20A23A45199924F700E4C577 = {
+						DevelopmentTeam = VQDPKHDU5S;
+					};
 					20A23A60199924F700E4C577 = {
 						TestTargetID = 20A23A45199924F700E4C577;
 					};
@@ -798,11 +803,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
 				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -814,11 +826,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleTime/SimpleTime-Prefix.pch";
 				INFOPLIST_FILE = "SimpleTime/SimpleTime-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

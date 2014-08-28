@@ -25,6 +25,8 @@
 + (UIColor *)waterColorLight;
 + (UIColor *)waterColorDark;
 
++ (UIColor *)separatorColor;
+
 + (UIColor *)colorForEventType:(SPTEventType)type;
 
 @end

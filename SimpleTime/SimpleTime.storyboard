@@ -32,12 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you doing now?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u41-Aq-lnj">
-                                <rect key="frame" x="15" y="110" width="290" height="44"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmq-jg-hI5">
                                 <rect key="frame" x="120" y="190" width="80" height="80"/>
                                 <constraints>
@@ -52,10 +46,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-O6-VFu">
-                                <rect key="frame" x="90" y="488" width="140" height="20"/>
+                                <rect key="frame" x="0.0" y="468" width="320" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="J2I-b1-qAq"/>
-                                    <constraint firstAttribute="width" constant="140" id="qZS-p3-Jrt"/>
+                                    <constraint firstAttribute="height" constant="60" id="J2I-b1-qAq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="My Record">
@@ -67,10 +60,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eo-NW-khn">
-                                <rect key="frame" x="269" y="24" width="36" height="36"/>
+                                <rect key="frame" x="265" y="20" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="J7k-qx-kr0"/>
-                                    <constraint firstAttribute="width" constant="36" id="iyQ-VU-UMe"/>
+                                    <constraint firstAttribute="height" constant="44" id="J7k-qx-kr0"/>
+                                    <constraint firstAttribute="width" constant="44" id="iyQ-VU-UMe"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="newEventDoneButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,17 +81,11 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-Vi-RIU">
-                                <rect key="frame" x="15" y="136" width="290" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pH-3j-fe7">
-                                <rect key="frame" x="15" y="24" width="36" height="36"/>
+                                <rect key="frame" x="11" y="20" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="Kdx-MF-wUX"/>
-                                    <constraint firstAttribute="height" constant="36" id="szr-KQ-SRS"/>
+                                    <constraint firstAttribute="width" constant="44" id="Kdx-MF-wUX"/>
+                                    <constraint firstAttribute="height" constant="44" id="szr-KQ-SRS"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="newEventCancelButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,18 +112,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="width" secondItem="jqX-O6-VFu" secondAttribute="width" id="03q-ka-WZq"/>
                             <constraint firstItem="VQd-nl-si2" firstAttribute="top" secondItem="6xa-98-kxd" secondAttribute="top" constant="64" id="570-Yw-iLD"/>
                             <constraint firstAttribute="centerX" secondItem="nmq-jg-hI5" secondAttribute="centerX" id="5WZ-mZ-fFb"/>
                             <constraint firstAttribute="trailing" secondItem="VQd-nl-si2" secondAttribute="trailing" constant="15" id="5td-ya-bSp"/>
                             <constraint firstAttribute="centerX" secondItem="jqX-O6-VFu" secondAttribute="centerX" id="6bv-cm-pvj"/>
                             <constraint firstItem="nmq-jg-hI5" firstAttribute="top" secondItem="6xa-98-kxd" secondAttribute="top" constant="190" id="KA5-Cw-ypG"/>
-                            <constraint firstItem="0pH-3j-fe7" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" constant="4" id="KUH-FA-1lo"/>
+                            <constraint firstItem="0pH-3j-fe7" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" id="KUH-FA-1lo"/>
                             <constraint firstAttribute="centerX" secondItem="KYu-sG-ocl" secondAttribute="centerX" id="Sfj-uA-AEg"/>
-                            <constraint firstItem="4eo-NW-khn" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" constant="4" id="Zpe-8l-iOx"/>
-                            <constraint firstItem="0pH-3j-fe7" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="15" id="d9x-Bc-6Hi"/>
-                            <constraint firstAttribute="trailing" secondItem="4eo-NW-khn" secondAttribute="trailing" constant="15" id="mH5-9X-VCk"/>
+                            <constraint firstItem="4eo-NW-khn" firstAttribute="top" secondItem="Wej-2v-PwA" secondAttribute="bottom" id="Zpe-8l-iOx"/>
+                            <constraint firstItem="0pH-3j-fe7" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="11" id="d9x-Bc-6Hi"/>
+                            <constraint firstAttribute="trailing" secondItem="4eo-NW-khn" secondAttribute="trailing" constant="11" id="mH5-9X-VCk"/>
                             <constraint firstAttribute="bottom" secondItem="KYu-sG-ocl" secondAttribute="bottom" constant="140" id="mcY-gg-SVR"/>
-                            <constraint firstItem="9Dn-E4-IJF" firstAttribute="top" secondItem="jqX-O6-VFu" secondAttribute="bottom" constant="60" id="pfs-US-CNG"/>
+                            <constraint firstItem="9Dn-E4-IJF" firstAttribute="top" secondItem="jqX-O6-VFu" secondAttribute="bottom" constant="40" id="pfs-US-CNG"/>
                             <constraint firstItem="VQd-nl-si2" firstAttribute="leading" secondItem="6xa-98-kxd" secondAttribute="leading" constant="15" id="uis-18-AoH"/>
                         </constraints>
                     </view>
@@ -146,23 +134,21 @@
                         <outlet property="addEventButton" destination="nmq-jg-hI5" id="QZ8-Qb-4mh"/>
                         <outlet property="cancelButton" destination="0pH-3j-fe7" id="cfR-nc-Fez"/>
                         <outlet property="currentEventFinishButton" destination="KYu-sG-ocl" id="jZe-Nc-Wbj"/>
-                        <outlet property="currentEventTitleLabel" destination="nxE-Vi-RIU" id="lM5-n9-nwM"/>
                         <outlet property="doneButton" destination="4eo-NW-khn" id="0lB-dd-LpJ"/>
                         <outlet property="eventTitleField" destination="VQd-nl-si2" id="21N-5w-waA"/>
                         <outlet property="myRecordButton" destination="jqX-O6-VFu" id="WH6-Cg-fnh"/>
-                        <outlet property="titleLabel" destination="u41-Aq-lnj" id="1mM-3i-Vbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXz-4t-Gca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="554"/>
+            <point key="canvasLocation" x="1094" y="554"/>
         </scene>
     </scenes>
     <resources>
         <image name="addEventButton.png" width="160" height="160"/>
         <image name="currentEventFinishButton.png" width="160" height="160"/>
-        <image name="newEventCancelButton.png" width="72" height="72"/>
-        <image name="newEventDoneButton.png" width="72" height="72"/>
+        <image name="newEventCancelButton.png" width="88" height="88"/>
+        <image name="newEventDoneButton.png" width="88" height="88"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

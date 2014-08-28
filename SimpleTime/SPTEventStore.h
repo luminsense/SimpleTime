@@ -30,6 +30,8 @@
 - (SPTEvent *)addEventWithTitle:(NSString *)title
                       eventType:(SPTEventType)type;
 
+- (void)removeEvent:(SPTEvent *)event;
+
 - (NSArray *)getEventsForDate:(NSDate *)date;
 - (NSArray *)getAllEvents;
 - (BOOL)saveChanges;

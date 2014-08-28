@@ -336,7 +336,6 @@ static BOOL NSRangeContainsRow (NSRange range, NSInteger row) {
 
 - (instancetype)initWithFrame:(CGRect)frame dayCellSize:(CGSize)cellSize dayCellFooterHeight:(CGFloat)footerHeight month:(NSInteger)month year:(NSInteger)year
 {
-    NSLog(@"init 3");
     _dayCellSize = cellSize;
     _dayCellFooterHeight = footerHeight;
     
