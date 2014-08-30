@@ -85,7 +85,8 @@
     float inset = 15.0;
     
     // Load type selector
-    self.typeSelector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake(inset, 128, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
+    float selectorInset = ([UIScreen mainScreen].bounds.size.width - [SPTEventTypeSelectView width]) / 2;
+    self.typeSelector = [[SPTEventTypeSelectView alloc] initWithFrame:CGRectMake(selectorInset, 128, [SPTEventTypeSelectView width], [SPTEventTypeSelectView height])];
     self.typeSelector.delegate = self;
     [self.view addSubview:self.typeSelector];
     self.typeSelector.hidden = YES;
@@ -206,7 +207,6 @@
     self.backWaterView.currentLinePointY = newLintPointY - 8;
 }
 
-
 #pragma mark - Events Handling
 
 - (IBAction)addEvent:(id)sender
@@ -233,9 +233,25 @@
     
     // Add new event to store
     [[SPTEventStore sharedStore] addEventWithTitle:title eventType:[self.typeSelector currentSelectedType]];
-    
     [self quitEditingStatus];
     [self transitionToCurrentEventStatus];
+    
+    
+    // Schedule notification
+    for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        [[UIApplication sharedApplication] cancelLocalNotification:notification];
+    }
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.applicationIconBadgeNumber = 1;
+    if ([[SPTEventStore sharedStore] currentEvent].eventTypeRaw == SPTEventTypeSleep) {
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60*60*8];
+        notification.alertBody = @"You've slept for 8 hours.";
+        
+    } else {
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60*60*2];
+        notification.alertBody = [NSString stringWithFormat:@"Still focusing on: %@", [[SPTEventStore sharedStore] currentEvent].title];
+    }
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 - (IBAction)finishCurrentEvent:(id)sender
@@ -243,6 +259,17 @@
     UIColor *color = [SPTColor colorForEventType:[[SPTEventStore sharedStore] currentEvent].eventTypeRaw];
     [[SPTEventStore sharedStore] finishCurrentEvent];
     [self quitCurrentEventStatusWithColor:color];
+    
+    // Schedule notification
+    for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        [[UIApplication sharedApplication] cancelLocalNotification:notification];
+    }
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60*60*2];
+    notification.alertBody = @"What are you doing now?";
+    notification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
     // [self transitionToNoEventStatus];
 }
 
@@ -305,12 +332,23 @@
 {
     self.currentEventTitleLabel.hidden = YES;
     self.currentEventFinishButton.hidden = YES;
+    
+    // Schedule notification
+    for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        [[UIApplication sharedApplication] cancelLocalNotification:notification];
+    }
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60*60*2];
+    notification.alertBody = @"What are you doing now?";
+    notification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 - (void)loadWithCurrentEvent
 {
     // Change text of titleLabel
-    CGRect frame = CGRectMake(15, 90, 290, 44);
+    float inset = 15.0;
+    CGRect frame = CGRectMake(inset, 90, [UIScreen mainScreen].bounds.size.width - inset * 2, 44);
     [self.titleLabel setFrame:frame];
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24.0];
     self.titleLabel.textColor = [SPTColor labelColorLight];
@@ -331,7 +369,7 @@
     [self.currentEventTitleLabel sizeToFit];
     CGRect newFrame = CGRectMake(self.currentEventTitleLabel.frame.origin.x,
                                  self.currentEventTitleLabel.frame.origin.y,
-                                 290,
+                                 [UIScreen mainScreen].bounds.size.width - self.currentEventTitleLabel.frame.origin.x * 2,
                                  self.currentEventTitleLabel.frame.size.height);
     self.currentEventTitleLabel.frame = newFrame;
     
@@ -355,6 +393,15 @@
                                                      self.currentEventFinishButton.frame.size.height);
      */
     self.currentEventFinishButton.hidden = NO;
+    
+    // Schedule notification
+    if ([[SPTEventStore sharedStore] currentEvent].eventTypeRaw != SPTEventTypeSleep) {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60*60*2];
+        notification.alertBody = [NSString stringWithFormat:@"Still focusing on: %@", [[SPTEventStore sharedStore] currentEvent].title];
+        notification.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
 }
 
 
@@ -378,7 +425,8 @@
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         CGRect frame = CGRectMake(15, 20, 290, 44);
+                         float inset = 15.0;
+                         CGRect frame = CGRectMake(inset, 20, [UIScreen mainScreen].bounds.size.width - inset * 2, 44);
                          [self.titleLabel setFrame:frame];
                          self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18.0];
                          self.titleLabel.textColor = [SPTColor labelColorLight];
@@ -458,7 +506,7 @@
     [self.currentEventTitleLabel sizeToFit];
     CGRect newFrame = CGRectMake(self.currentEventTitleLabel.frame.origin.x,
                                  self.currentEventTitleLabel.frame.origin.y,
-                                 290,
+                                 [UIScreen mainScreen].bounds.size.width - self.currentEventTitleLabel.frame.origin.x * 2,
                                  self.currentEventTitleLabel.frame.size.height);
     self.currentEventTitleLabel.frame = newFrame;
     self.currentEventTitleLabel.alpha = 0;
@@ -488,7 +536,8 @@
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         CGRect frame = CGRectMake(15, 90, 290, 44);
+                         float inset = 15.0;
+                         CGRect frame = CGRectMake(inset, 90, [UIScreen mainScreen].bounds.size.width - inset * 2, 44);
                          [self.titleLabel setFrame:frame];
                          self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24.0];
                          self.titleLabel.textColor = [SPTColor labelColorLight];
@@ -571,7 +620,8 @@
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         CGRect frame = CGRectMake(15, 110, 290, 44);
+                         float inset = 15.0;
+                         CGRect frame = CGRectMake(inset, 110, [UIScreen mainScreen].bounds.size.width - inset * 2, 44);
                          [self.titleLabel setFrame:frame];
                          self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24.0];
                          self.titleLabel.textColor = [SPTColor labelColorDark];

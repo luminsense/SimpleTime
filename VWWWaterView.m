@@ -99,7 +99,7 @@
         CGPathAddLineToPoint(path, nil, x, y);
     }
     
-    CGPathAddLineToPoint(path, nil, 320, rect.size.height);
+    CGPathAddLineToPoint(path, nil, [UIScreen mainScreen].bounds.size.width, rect.size.height);
     CGPathAddLineToPoint(path, nil, 0, rect.size.height);
     CGPathAddLineToPoint(path, nil, 0, _currentLinePointY);
     

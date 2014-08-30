@@ -15,8 +15,7 @@
 
 @interface SPTHistoryViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet MZDayPicker *dayPicker;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
+@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) PNPieChart *pieChart;
 @property (nonatomic, strong) NSDateFormatter *weekdayFormatter;
@@ -56,6 +55,13 @@
     [self.monthFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     
     [self updateTitleLabel];
+    
+    // Add label
+    float inset = 15.0;
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(inset, 20, [UIScreen mainScreen].bounds.size.width - inset * 2, 44)];
+    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:self.titleLabel];
     
     // Add close button
     UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(11, 20, 44, 44)];
