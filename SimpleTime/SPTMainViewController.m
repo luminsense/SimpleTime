@@ -305,14 +305,24 @@
         case SPTEventTypeWorkout:
             placeholder = @"Workout";
             break;
-        case SPTEventTypeDining:
-            placeholder = @"Dining";
+        case SPTEventTypeDining: {
+            NSInteger hour = [[NSCalendar currentCalendar] component:NSCalendarUnitHour fromDate:[NSDate date]];
+            if (hour >=  4 && hour < 11) {
+                placeholder = @"Breakfast";
+            } else if (hour >= 11 && hour < 16) {
+                placeholder = @"Lunch";
+            } else if (hour >= 16 && hour < 22) {
+                placeholder = @"Dinner";
+            } else {
+                placeholder = @"Dining";
+            }
             break;
+        }
         case SPTEventTypeRead:
             placeholder = @"Reading";
             break;
         case SPTEventTypeTransport:
-            placeholder = @"Transportation";
+            placeholder = @"Transport";
             break;
         case SPTEventTypeRelax:
             placeholder = @"Relax";
@@ -346,13 +356,22 @@
 
 - (void)loadWithCurrentEvent
 {
+    // Get the wording
+    NSString *labelText;
+    SPTEvent *event = [[SPTEventStore sharedStore] currentEvent];
+    if (event.eventTypeRaw == SPTEventTypeRead || event.eventTypeRaw == SPTEventTypeStudy || event.eventTypeRaw == SPTEventTypeWork || event.eventTypeRaw == SPTEventTypeWorkout ) {
+        labelText = @"Focus on";
+    } else {
+        labelText = @"Recording time";
+    }
+    
     // Change text of titleLabel
     float inset = 15.0;
     CGRect frame = CGRectMake(inset, 90, [UIScreen mainScreen].bounds.size.width - inset * 2, 44);
     [self.titleLabel setFrame:frame];
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24.0];
     self.titleLabel.textColor = [SPTColor labelColorLight];
-    self.titleLabel.text = @"Focus on";
+    self.titleLabel.text = labelText;
     
     // Hide addEventButton
     self.addEventButton.hidden = YES;
@@ -396,6 +415,9 @@
     
     // Schedule notification
     if ([[SPTEventStore sharedStore] currentEvent].eventTypeRaw != SPTEventTypeSleep) {
+        for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+            [[UIApplication sharedApplication] cancelLocalNotification:notification];
+        }
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60*60*2];
         notification.alertBody = [NSString stringWithFormat:@"Still focusing on: %@", [[SPTEventStore sharedStore] currentEvent].title];
@@ -529,6 +551,15 @@
     self.myRecordButton.hidden = NO;
     self.myRecordButton.alpha = 0;
     
+    // Get the wording
+    NSString *labelText;
+    SPTEvent *event = [[SPTEventStore sharedStore] currentEvent];
+    if (event.eventTypeRaw == SPTEventTypeRead || event.eventTypeRaw == SPTEventTypeStudy || event.eventTypeRaw == SPTEventTypeWork || event.eventTypeRaw == SPTEventTypeWorkout ) {
+        labelText = @"Focus on";
+    } else {
+        labelText = @"Recording time";
+    }
+    
     // Move titleLabel and change text
     [UIView animateWithDuration:0.3
                           delay:0.0
@@ -541,7 +572,7 @@
                          [self.titleLabel setFrame:frame];
                          self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24.0];
                          self.titleLabel.textColor = [SPTColor labelColorLight];
-                         self.titleLabel.text = @"Focus on";
+                         self.titleLabel.text = labelText;
                      }
                      completion:NULL];
     [UIView animateWithDuration:0.3

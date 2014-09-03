@@ -93,7 +93,7 @@
             color = [UIColor colorWithRed:116.0 / 255.0 green:149.0 / 255.0 blue:166.0 / 255.0 alpha:1];
             break;
         case SPTEventTypeRelax:
-            color = [UIColor colorWithRed:0 / 255.0 green:158.0 / 255.0 blue:163.0 / 255.0 alpha:1];
+            color = [UIColor colorWithRed:222.0 / 255.0 green:166.0 / 255.0 blue:129.0 / 255.0 alpha:1];
             break;
         default:
             color = [UIColor clearColor];

@@ -98,6 +98,20 @@
 			remoteGlobalIDString = 20A23A45199924F700E4C577;
 			remoteInfo = SimpleTime;
 		};
+		20E9ADD419B571E300BF702C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20A23A3E199924F700E4C577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20A23A45199924F700E4C577;
+			remoteInfo = SimpleTime;
+		};
+		20E9ADD619B571E400BF702C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20A23A3E199924F700E4C577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20A23A45199924F700E4C577;
+			remoteInfo = SimpleTime;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -485,9 +499,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20A23A45199924F700E4C577 /* SimpleTime */ = {
+		20A23A45199924F700E4C577 /* TimeFlows */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTime" */;
+			buildConfigurationList = 20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "TimeFlows" */;
 			buildPhases = (
 				F67F2DDDEA5345F382A35983 /* Check Pods Manifest.lock */,
 				20A23A42199924F700E4C577 /* Sources */,
@@ -499,7 +513,7 @@
 			);
 			dependencies = (
 			);
-			name = SimpleTime;
+			name = TimeFlows;
 			productName = SimpleTime;
 			productReference = 20A23A46199924F700E4C577 /* SimpleTime.app */;
 			productType = "com.apple.product-type.application";
@@ -516,6 +530,8 @@
 			);
 			dependencies = (
 				20A23A67199924F700E4C577 /* PBXTargetDependency */,
+				20E9ADD519B571E300BF702C /* PBXTargetDependency */,
+				20E9ADD719B571E400BF702C /* PBXTargetDependency */,
 			);
 			name = SimpleTimeTests;
 			productName = SimpleTimeTests;
@@ -552,7 +568,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20A23A45199924F700E4C577 /* SimpleTime */,
+				20A23A45199924F700E4C577 /* TimeFlows */,
 				20A23A60199924F700E4C577 /* SimpleTimeTests */,
 			);
 		};
@@ -702,8 +718,18 @@
 /* Begin PBXTargetDependency section */
 		20A23A67199924F700E4C577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20A23A45199924F700E4C577 /* SimpleTime */;
+			target = 20A23A45199924F700E4C577 /* TimeFlows */;
 			targetProxy = 20A23A66199924F700E4C577 /* PBXContainerItemProxy */;
+		};
+		20E9ADD519B571E300BF702C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20A23A45199924F700E4C577 /* TimeFlows */;
+			targetProxy = 20E9ADD419B571E300BF702C /* PBXContainerItemProxy */;
+		};
+		20E9ADD719B571E400BF702C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20A23A45199924F700E4C577 /* TimeFlows */;
+			targetProxy = 20E9ADD619B571E400BF702C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -895,7 +921,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "SimpleTime" */ = {
+		20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "TimeFlows" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20A23A73199924F700E4C577 /* Debug */,
