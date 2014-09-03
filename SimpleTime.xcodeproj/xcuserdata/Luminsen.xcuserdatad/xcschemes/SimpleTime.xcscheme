@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20A23A45199924F700E4C577"
-               BuildableName = "TimeFlows.app"
-               BlueprintName = "TimeFlows"
+               BuildableName = "Time Flows.app"
+               BlueprintName = "Time Flows"
                ReferencedContainer = "container:SimpleTime.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20A23A45199924F700E4C577"
-            BuildableName = "TimeFlows.app"
-            BlueprintName = "TimeFlows"
+            BuildableName = "Time Flows.app"
+            BlueprintName = "Time Flows"
             ReferencedContainer = "container:SimpleTime.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20A23A45199924F700E4C577"
-            BuildableName = "TimeFlows.app"
-            BlueprintName = "TimeFlows"
+            BuildableName = "Time Flows.app"
+            BlueprintName = "Time Flows"
             ReferencedContainer = "container:SimpleTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20A23A45199924F700E4C577"
-            BuildableName = "TimeFlows.app"
-            BlueprintName = "TimeFlows"
+            BuildableName = "Time Flows.app"
+            BlueprintName = "Time Flows"
             ReferencedContainer = "container:SimpleTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

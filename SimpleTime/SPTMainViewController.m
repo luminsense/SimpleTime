@@ -284,54 +284,52 @@
 - (void)valueDidChangeInTypeSelectView:(SPTEventTypeSelectView *)selector
 {
     SPTEventType type = [self.typeSelector currentSelectedType];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitHour|NSCalendarUnitMinute fromDate:[NSDate date]];
+    NSInteger hour = components.hour;
     
-    NSString *placeholder;
     switch (type) {
         case SPTEventTypeNone:
-            placeholder = @"";
+            self.eventTitleField.placeholder = @"";
             break;
         case SPTEventTypeWork:
-            placeholder = @"Work";
+            self.eventTitleField.placeholder = @"Work";
             break;
         case SPTEventTypeStudy:
-            placeholder = @"Study";
+            self.eventTitleField.placeholder = @"Study";
             break;
         case SPTEventTypeFun:
-            placeholder = @"Play";
+            self.eventTitleField.placeholder = @"Play";
             break;
         case SPTEventTypeSleep:
-            placeholder = @"Sleep";
+            self.eventTitleField.placeholder = @"Sleep";
             break;
         case SPTEventTypeWorkout:
-            placeholder = @"Workout";
+            self.eventTitleField.placeholder = @"Workout";
             break;
-        case SPTEventTypeDining: {
-            NSInteger hour = [[NSCalendar currentCalendar] component:NSCalendarUnitHour fromDate:[NSDate date]];
-            if (hour >=  4 && hour < 11) {
-                placeholder = @"Breakfast";
+        case SPTEventTypeDining:
+            if (hour >= 4 && hour < 11) {
+                self.eventTitleField.placeholder = @"Breakfast";
             } else if (hour >= 11 && hour < 16) {
-                placeholder = @"Lunch";
+                self.eventTitleField.placeholder = @"Lunch";
             } else if (hour >= 16 && hour < 22) {
-                placeholder = @"Dinner";
+                self.eventTitleField.placeholder = @"Dinner";
             } else {
-                placeholder = @"Dining";
+                self.eventTitleField.placeholder = @"Dining";
             }
             break;
-        }
         case SPTEventTypeRead:
-            placeholder = @"Reading";
+            self.eventTitleField.placeholder = @"Reading";
             break;
         case SPTEventTypeTransport:
-            placeholder = @"Transport";
+            self.eventTitleField.placeholder = @"Transport";
             break;
         case SPTEventTypeRelax:
-            placeholder = @"Relax";
+            self.eventTitleField.placeholder = @"Relax";
             break;
         default:
-            placeholder = @"";
+            self.eventTitleField.placeholder = @"";
             break;
     }
-    self.eventTitleField.placeholder = placeholder;
     
     [self updateDoneButtonEnabledStatus];
 }
