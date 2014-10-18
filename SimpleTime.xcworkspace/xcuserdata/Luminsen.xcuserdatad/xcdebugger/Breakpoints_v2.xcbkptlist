@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleTime/SPTMainViewController.m"
-            timestampString = "431461855.488934"
+            timestampString = "431498566.541311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "-valueDidChangeInTypeSelectView:"
             landmarkType = "5">
          </BreakpointContent>

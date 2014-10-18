@@ -144,7 +144,7 @@
 		2093679E19A0ACC700CCFBAC /* SPTEventTypeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTEventTypeSelectView.h; path = SimpleTime/SPTEventTypeSelectView.h; sourceTree = "<group>"; };
 		2093679F19A0ACC700CCFBAC /* SPTEventTypeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTEventTypeSelectView.m; path = SimpleTime/SPTEventTypeSelectView.m; sourceTree = "<group>"; };
 		209367A119A0C35E00CCFBAC /* SimpleTime.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SimpleTime.storyboard; path = SimpleTime/SimpleTime.storyboard; sourceTree = "<group>"; };
-		20A23A46199924F700E4C577 /* TimeFlows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeFlows.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A23A46199924F700E4C577 /* Time Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A23A49199924F700E4C577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20A23A4B199924F700E4C577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		20A23A4D199924F700E4C577 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -374,7 +374,7 @@
 		20A23A47199924F700E4C577 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20A23A46199924F700E4C577 /* TimeFlows.app */,
+				20A23A46199924F700E4C577 /* Time Flow.app */,
 				20A23A61199924F700E4C577 /* SimpleTimeTests.xctest */,
 			);
 			name = Products;
@@ -499,9 +499,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20A23A45199924F700E4C577 /* Time Flows */ = {
+		20A23A45199924F700E4C577 /* Time Flow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "Time Flows" */;
+			buildConfigurationList = 20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "Time Flow" */;
 			buildPhases = (
 				F67F2DDDEA5345F382A35983 /* Check Pods Manifest.lock */,
 				20A23A42199924F700E4C577 /* Sources */,
@@ -513,9 +513,9 @@
 			);
 			dependencies = (
 			);
-			name = "Time Flows";
+			name = "Time Flow";
 			productName = SimpleTime;
-			productReference = 20A23A46199924F700E4C577 /* TimeFlows.app */;
+			productReference = 20A23A46199924F700E4C577 /* Time Flow.app */;
 			productType = "com.apple.product-type.application";
 		};
 		20A23A60199924F700E4C577 /* SimpleTimeTests */ = {
@@ -568,7 +568,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20A23A45199924F700E4C577 /* Time Flows */,
+				20A23A45199924F700E4C577 /* Time Flow */,
 				20A23A60199924F700E4C577 /* SimpleTimeTests */,
 			);
 		};
@@ -718,17 +718,17 @@
 /* Begin PBXTargetDependency section */
 		20A23A67199924F700E4C577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20A23A45199924F700E4C577 /* Time Flows */;
+			target = 20A23A45199924F700E4C577 /* Time Flow */;
 			targetProxy = 20A23A66199924F700E4C577 /* PBXContainerItemProxy */;
 		};
 		20E9ADD519B571E300BF702C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20A23A45199924F700E4C577 /* Time Flows */;
+			target = 20A23A45199924F700E4C577 /* Time Flow */;
 			targetProxy = 20E9ADD419B571E300BF702C /* PBXContainerItemProxy */;
 		};
 		20E9ADD719B571E400BF702C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20A23A45199924F700E4C577 /* Time Flows */;
+			target = 20A23A45199924F700E4C577 /* Time Flow */;
 			targetProxy = 20E9ADD619B571E400BF702C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -921,7 +921,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "Time Flows" */ = {
+		20A23A72199924F700E4C577 /* Build configuration list for PBXNativeTarget "Time Flow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20A23A73199924F700E4C577 /* Debug */,

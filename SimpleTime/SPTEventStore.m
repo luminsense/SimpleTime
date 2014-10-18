@@ -175,7 +175,6 @@
     [components setHour:0];
     [components setMinute:0];
     [components setSecond:0];
-    [components setNanosecond:0];
     NSDate *startOfDay = [[NSCalendar currentCalendar] dateFromComponents:components];
     
     // Get end of day

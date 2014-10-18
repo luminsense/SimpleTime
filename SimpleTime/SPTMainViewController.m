@@ -195,7 +195,6 @@
     [components setHour:0];
     [components setMinute:0];
     [components setSecond:0];
-    [components setNanosecond:0];
     NSDate *startOfDay = [[NSCalendar currentCalendar] dateFromComponents:components];
     
     NSTimeInterval secondsOfDay = 60 * 60 * 24;

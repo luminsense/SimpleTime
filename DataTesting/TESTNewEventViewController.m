@@ -94,7 +94,7 @@
             return @"Sleep";
             break;
         case 5:
-            return @"Dining";
+            return @"Study";
             break;
         case 6:
             return @"Transportation";
@@ -103,10 +103,10 @@
             return @"Reading";
             break;
         case 8:
-            return @"Personal Issue";
+            return @"Dining";
             break;
         case 9:
-            return @"Stay at Home";
+            return @"Relax";
             break;
         default:
             return @"??? unknown ???";
